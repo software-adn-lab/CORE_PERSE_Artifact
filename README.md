@@ -63,12 +63,17 @@ CORE PERSE provides three calibration strategies:
 
 ##  Usage Guide
 
+```bash
 ### 1. Clone the Repository
+
 
 git clone https://github.com/software-adn-lab/CORE_PERSE_Artifact.git
 cd CORE_PERSE_Artifact
 
+
+
 ### 2. Setup Environment
+
 python -m venv .venv
 source .venv/bin/activate
 
@@ -92,8 +97,10 @@ python -m src.cli samples/your_model.xmi \
   -o report.json \
   --metrics-out metrics.json
 
-Outputs
-Output	Description
-report.json	Detected antipatterns with justification
-metrics.json	Metrics, thresholds, calibration parameters
-Console	Execution summary
+## Outputs
+
+| Output | Description |
+|--------|------------|
+| report.json | Detected antipatterns with justification |
+| metrics.json | Metrics, thresholds, calibration parameters |
+| Console | Execution summary |
