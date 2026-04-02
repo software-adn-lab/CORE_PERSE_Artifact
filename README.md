@@ -7,7 +7,7 @@
 
 ---
 
-## 📄 Abstract
+## Abstract
 
 **CORE PERSE** (Combined Reasoning & Pervasive Search Engine) is a software artifact developed under the **Design Science Research (DSR)** methodology. Its primary objective is to enable the **early detection of software design antipatterns** directly from UML class diagrams before the implementation phase.
 
@@ -15,7 +15,7 @@ The artifact integrates **structural metrics, heuristic rules, and AI-based cali
 
 ---
 
-## 🎯 Scope & Detection Capabilities
+## Scope & Detection Capabilities
 
 This tool is designed to analyze **software design artifacts**, specifically UML class diagrams represented in **XMI 2.1 format**, complemented with project documentation (PDF).
 
@@ -28,7 +28,7 @@ It detects the following antipatterns:
 
 ---
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 CORE PERSE is implemented as a **CLI-based analytical pipeline**, designed for reproducibility and flexibility in academic and research contexts.
 
@@ -49,7 +49,7 @@ CORE PERSE is implemented as a **CLI-based analytical pipeline**, designed for r
 
 ---
 
-## ⚙️ Calibration Modes
+##  Calibration Modes
 
 CORE PERSE provides three calibration strategies:
 
@@ -61,7 +61,7 @@ CORE PERSE provides three calibration strategies:
 
 ---
 
-## 🚀 Usage Guide
+##  Usage Guide
 
 ### 1. Clone the Repository
 
