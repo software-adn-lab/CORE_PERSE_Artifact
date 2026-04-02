@@ -60,6 +60,14 @@ CORE PERSE provides three calibration strategies:
 | **AI Automated** | Dynamic calibration using structural + semantic signals (Recommended) |
 
 ---
+## Outputs
+
+| Output | Description |
+|--------|------------|
+| report.json | Detected antipatterns with justification |
+| metrics.json | Metrics, thresholds, calibration parameters |
+| Console | Execution summary |
+---
 
 ##  Usage Guide
 
@@ -97,10 +105,4 @@ python -m src.cli samples/your_model.xmi \
   -o report.json \
   --metrics-out metrics.json
 
-## Outputs
 
-| Output | Description |
-|--------|------------|
-| report.json | Detected antipatterns with justification |
-| metrics.json | Metrics, thresholds, calibration parameters |
-| Console | Execution summary |
