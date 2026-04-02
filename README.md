@@ -68,3 +68,29 @@ CORE PERSE provides three calibration strategies:
 ```bash
 git clone https://github.com/software-adn-lab/CORE_PERSE_Artifact.git
 cd CORE_PERSE_Artifact
+2. Setup Environment
+python -m venv .venv
+source .venv/bin/activate
+
+Windows (PowerShell):
+
+.\.venv\Scripts\Activate.ps1
+3. Install Dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+4. Prepare Inputs
+Place your PDF document inside:
+docs/pdfs/
+Place your XMI file inside:
+samples/
+5. Execute the Pipeline
+python -m src.cli samples/your_model.xmi \
+  --pdf docs/pdfs/your_document.pdf \
+  --ai-calibrate \
+  -o report.json \
+  --metrics-out metrics.json
+Outputs
+Output	Description
+report.json	Detected antipatterns with justification
+metrics.json	Metrics, thresholds, calibration parameters
+Console	Execution summary
