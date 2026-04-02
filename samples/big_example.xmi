@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi:version="2.1"
+     xmlns:uml="http://www.omg.org/spec/UML/20090901"
+     xmlns:xmi="http://www.omg.org/XMI">
+
+  <uml:Model name="PlayerModule" xmi:id="model_player">
+
+    <!-- ========== 1 ▸ DOMAIN LAYER ========== -->
+    <packagedElement xmi:type="uml:Package" name="domain" xmi:id="pkg_domain">
+
+      <!-- Guest ------------------------------------------------------------ -->
+      <packagedElement xmi:type="uml:Class" name="Guest" xmi:id="cls_dom_guest">
+        <ownedAttribute name="guestId" type="String" visibility="private"/>
+        <ownedAttribute name="name"    type="String" visibility="private"/>
+        <ownedAttribute name="birthDate" type="Date" visibility="private"/>
+        <ownedOperation name="addScore"/>
+        <ownedOperation name="getScores"/>
+      </packagedElement>
+
+      <!-- Score ------------------------------------------------------------ -->
+      <packagedElement xmi:type="uml:Class" name="Score" xmi:id="cls_dom_score">
+        <ownedAttribute name="scoreId"  type="String"/>
+        <ownedAttribute name="value"    type="Integer"/>
+        <ownedAttribute name="themeId"  type="String"/>
+        <ownedAttribute name="playedAt" type="Date"/>
+      </packagedElement>
+
+      <!-- Achievement (abstract) ------------------------------------------ -->
+      <packagedElement xmi:type="uml:Class" name="Achievement" xmi:id="cls_dom_ach" isAbstract="true">
+        <ownedAttribute name="id"          type="String"/>
+        <ownedAttribute name="name"        type="String"/>
+        <ownedAttribute name="description" type="String"/>
+        <ownedOperation name="verify" visibility="public">
+          <ownedParameter name="guest" type="Guest" direction="in"/>
+          <ownedParameter name="valid" type="Boolean" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- TimeAchievement (specialisation) -------------------------------- -->
+      <packagedElement xmi:type="uml:Class" name="TimeAchievement" xmi:id="cls_dom_timeAch">
+        <generalization general="cls_dom_ach"/>
+        <ownedAttribute name="thresholdSeconds" type="Integer"/>
+      </packagedElement>
+
+      <!-- Interface IAchievementRepository -------------------------------- -->
+      <packagedElement xmi:type="uml:Interface" name="IAchievementRepository" xmi:id="int_dom_rep">
+        <ownedOperation name="findNotIn">
+          <ownedParameter name="ids" type="String" direction="in" multiplicity="0..*"/>
+          <ownedParameter name="items" type="Achievement" direction="return" multiplicity="0..*"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- Relationships ---------------------------------------------------- -->
+      <packagedElement xmi:type="uml:Association" xmi:id="assoc_guest_score">
+        <memberEnd xmi:idref="cls_dom_guest"/>
+        <memberEnd xmi:idref="cls_dom_score"/>
+      </packagedElement>
+
+    </packagedElement>
+
+
+    <!-- ========== 2 ▸ APPLICATION LAYER ========== -->
+    <packagedElement xmi:type="uml:Package" name="application" xmi:id="pkg_app">
+
+      <!-- AchievementService ---------------------------------------------- -->
+      <packagedElement xmi:type="uml:Class" name="AchievementService" xmi:id="cls_app_achSrv">
+        <ownedOperation name="getNewAchievements">
+          <ownedParameter name="guestId" type="String" direction="in"/>
+          <ownedParameter name="list"    type="Achievement" direction="return" multiplicity="0..*"/>
+        </ownedOperation>
+        <clientDependency supplier="int_dom_rep"/>
+      </packagedElement>
+
+      <!-- ScoreService ----------------------------------------------------- -->
+      <packagedElement xmi:type="uml:Class" name="ScoreService" xmi:id="cls_app_scoreSrv">
+        <ownedOperation name="createScore"/>
+      </packagedElement>
+
+    </packagedElement>
+
+
+    <!-- ========== 3 ▸ INFRASTRUCTURE LAYER ========== -->
+    <packagedElement xmi:type="uml:Package" name="infrastructure" xmi:id="pkg_inf">
+
+      <!-- DBAchievementRepository (implements interface) ------------------ -->
+      <packagedElement xmi:type="uml:Class" name="DBAchievementRepository"
+                       xmi:id="cls_inf_dbAchRep">
+        <interfaceRealization supplier="int_dom_rep"/>
+      </packagedElement>
+
+    </packagedElement>
+
+  </uml:Model>
+</XMI>
