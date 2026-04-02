@@ -90,15 +90,19 @@ Windows (PowerShell):
 .\.venv\Scripts\Activate.ps1
 
 ### 3. Install Dependencies
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
 ### 4. Prepare Inputs
+
 Place your PDF document inside:
 docs/pdfs/
 Place your XMI file inside:
 samples/
+
 ### 5. Execute the Pipeline
+
 python -m src.cli samples/your_model.xmi \
   --pdf docs/pdfs/your_document.pdf \
   --ai-calibrate \
