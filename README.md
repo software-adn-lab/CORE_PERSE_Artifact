@@ -65,9 +65,9 @@ CORE PERSE provides three calibration strategies:
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/software-adn-lab/CORE_PERSE_Artifact.git
 cd CORE_PERSE_Artifact
+
 ### 2. Setup Environment
 python -m venv .venv
 source .venv/bin/activate
