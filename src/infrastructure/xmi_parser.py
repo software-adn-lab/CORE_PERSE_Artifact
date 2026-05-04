@@ -8,9 +8,10 @@ from src.domain.model import UMLModel, UMLClass, UMLAttribute, UMLOperation
 
 class XMIParser:
     # Namespaces XML usados en consultas XPath.
+    # Acepta cualquier namespace UML/XMI para máxima compatibilidad
     NS = {
-        "uml": "http://www.omg.org/spec/UML/20090901",
-        "xmi": "http://www.omg.org/XMI",
+        "uml": None,  # Se ignora el namespace para XPath
+        "xmi": None,
     }
 
     # ------------------------------------------------------------------ #
@@ -42,13 +43,16 @@ class XMIParser:
         # Buscamos nodos UML que sean Class o Interface.
         # Ejemplo de XPath objetivo:
         # .//packagedElement[@xmi:type='uml:Class']
+        # XPath sin namespaces estrictos: busca cualquier packagedElement cuyo xmi:type termine en 'Class' o 'Interface'
         for node in root.xpath(
-            ".//packagedElement[@xmi:type='uml:Class' or @xmi:type='uml:Interface']",
-            namespaces=self.NS,
+            ".//packagedElement[contains(@xmi:type, 'Class') or contains(@xmi:type, 'Interface')]",
+            namespaces={"xmi": root.nsmap.get("xmi", "http://www.omg.org/XMI")},
         ):
             # Construimos entidad de dominio UMLClass.
+            # Detecta el namespace real de xmi:id
+            xmi_ns = root.nsmap.get("xmi", "http://www.omg.org/XMI")
             cls = UMLClass(
-                id_=node.get(f"{{{self.NS['xmi']}}}id"),
+                id_=node.get(f"{{{xmi_ns}}}id"),
                 name=node.get("name", "<unnamed>"),
                 package=self._package_of(node),
             )
@@ -77,10 +81,10 @@ class XMIParser:
 
         # ---------- 2 · Dependency / Association ------------------------ #
         # Otras relaciones vienen como packagedElement Dependency/Association.
+        # Usar solo el namespace xmi, nunca default, para evitar errores de lxml
         for rel in root.xpath(
-            ".//packagedElement[@xmi:type='uml:Dependency' "
-            "or @xmi:type='uml:Association']",
-            namespaces=self.NS,
+            ".//packagedElement[contains(@xmi:type, 'Dependency') or contains(@xmi:type, 'Association')]",
+            namespaces={"xmi": root.nsmap.get("xmi", "http://www.omg.org/XMI")},
         ):
             # Fallback memberEnd cuando no existe client/supplier explicitos.
             client = rel.get("client") or rel.get("memberEnd")

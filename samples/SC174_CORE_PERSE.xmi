@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="StarUML" exporterVersion="2.0"/>
+	<uml:Model xmi:id="AAAAAAGd4C8FfYOaNw8=" xmi:type="uml:Model" name="RootModel">
+		<packagedElement xmi:id="AAAAAAFF+qBWK6M3Z8Y=" name="Model" visibility="public" xmi:type="uml:Model">
+			<packagedElement xmi:id="AAAAAAGd30OAwlJ71/M=" name="Interfaz%20de%20usuario" visibility="public" xmi:type="uml:Package">
+				<packagedElement xmi:id="AAAAAAGd31l5wFMlDZU=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd30OAwlJ71/M=" supplier="AAAAAAGd31dX9FKzOEk="/>
+				<xmi:Extension extender="StarUML">
+					<stereotype value="Package"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd31b0JVKYFHo=" name="N%C3%BAcleo%20de%20chatbot" visibility="public" xmi:type="uml:Package">
+				<packagedElement xmi:id="AAAAAAGd31eXQFLNyBs=" name="Reconocimiento%20de%20la%20intenci%C3%B3n" visibility="public" xmi:type="uml:Package">
+					<packagedElement xmi:id="AAAAAAGd31nH+VNOBuk=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd31eXQFLNyBs=" supplier="AAAAAAGd31gy9lLtd0o="/>
+					<packagedElement xmi:id="AAAAAAGd31oDgVNkhXw=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd31eXQFLNyBs=" supplier="AAAAAAGd31h7mlMHhZo="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="Package"/>
+					</xmi:Extension>
+				</packagedElement>
+				<packagedElement xmi:id="AAAAAAGd31dX9FKzOEk=" name="Proxy" visibility="public" xmi:type="uml:Package">
+					<packagedElement xmi:id="AAAAAAGd31mW51M371I=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd31dX9FKzOEk=" supplier="AAAAAAGd31eXQFLNyBs="/>
+					<xmi:Extension extender="StarUML">
+						<stereotype value="Package"/>
+					</xmi:Extension>
+				</packagedElement>
+				<xmi:Extension extender="StarUML">
+					<stereotype value="Package"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd31gy9lLtd0o=" name="Filtro" visibility="public" xmi:type="uml:Package">
+				<xmi:Extension extender="StarUML">
+					<stereotype value="Package"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd31h7mlMHhZo=" name="Base%20del%20conocimiento" visibility="public" xmi:type="uml:Package">
+				<xmi:Extension extender="StarUML">
+					<stereotype value="Package"/>
+				</xmi:Extension>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd3113G1Py9yc=" name="ResponseFormatter" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd32qxX1pv9IM=" name="uses" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd3113G1Py9yc=" supplier="AAAAAAGd32FfsFRFJRc="/>
+				<ownedOperation xmi:id="AAAAAAGd32BNrFQwTZs=" name="getRecognizedResponse" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32C44FQ3Ap4=" name="document" visibility="public" isStatic="false" isLeaf="false" type="Dict_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32C44VQ43fw=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd32DbKlQ7kos=" name="getNoRecognizedResponse" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32Ext1RCOS4=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd32FfsFRFJRc=" name="MesagesResonsesGenerator" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd32pnglUJn8c=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGd32pnglUKrms=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="shared" isDerived="false" isID="false" type="AAAAAAGd32FfsFRFJRc=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGd32pnglUL6Qs=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd32XAIVSz5cU=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGd32pnglUKrms="/>
+					<memberEnd xmi:idref="AAAAAAGd32pnglUL6Qs="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGd33pKOW57NoQ=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd32FfsFRFJRc=" supplier="AAAAAAGd33P3EmudZtU="/>
+				<ownedMember xmi:id="AAAAAAGd34zp3ft7dM4=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGd34zp3ft8w8Y=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd32FfsFRFJRc=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGd34zp3ft90Cc=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd336G4ZitHwk=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGd34zp3ft8w8Y="/>
+					<memberEnd xmi:idref="AAAAAAGd34zp3ft90Cc="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGd32GjSFRv0WA=" name="confidenceLimit" visibility="private" isStatic="false" isLeaf="false" type="Float_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGd32IZqVR3hS8=" name="suggestionLimit" visibility="private" isStatic="false" isLeaf="false" type="Float_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGd32JwSlR/0Ko=" name="maxSuggestionsNumber" visibility="private" isStatic="false" isLeaf="false" type="Int_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGd32LEA1SHm/0=" name="mostRelevantDocuments" visibility="private" isStatic="false" isLeaf="false" type="List%3CDict%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGd32PCQFSQ94k=" name="handleRequest" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32Qm1FSXUsY=" name="userRequest" visibility="public" isStatic="false" isLeaf="false" type="Request_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32Qm1FSY49c=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd32QnaFSb1Pg=" name="saveSuggestions" visibility="private" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32TEYlSjXSw=" name="similarityValue" visibility="public" isStatic="false" isLeaf="false" type="Float_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32TEYlSkag4=" name="document" visibility="public" isStatic="false" isLeaf="false" type="Dict_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd32TE1VSn/+w=" name="handleSuggestionsResponse" visibility="private" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32UmIVSvjbE=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<interfaceRealization xmi:id="AAAAAAGd32yUAWCVkoc=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd32FfsFRFJRc=" contract="AAAAAAGd32toiFxZ/uM="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd32XAIVSz5cU=" name="MessagesProxy" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGd32YcL1TdjJY=" name="messagesResponsesGenerator" visibility="private" isStatic="false" isLeaf="false" type="MessagesResponsesGenerator_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGd32ePGFTrjRM=" name="validateData" visibility="private" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32iBWFTzIu4=" name="userMessageJsonData" visibility="public" isStatic="false" isLeaf="false" type="Dict_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32iBWFT0GlY=" visibility="public" isStatic="false" isLeaf="false" type="List%3CBool%20Dict%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd32jhG1T4K6c=" name="handleRequest" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32k9IVT/JAc=" name="userRequest" visibility="public" isStatic="false" isLeaf="false" type="Request_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32k9IlUAlys=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<interfaceRealization xmi:id="AAAAAAGd32xgIF6eqIs=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd32XAIVSz5cU=" contract="AAAAAAGd32toiFxZ/uM="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd32toiFxZ/uM=" name="ProxyInterface" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedOperation xmi:id="AAAAAAGd32twRFykSoo=" name="handleRequest" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd32vweF0D5xE=" name="userRequest" visibility="public" isStatic="false" isLeaf="false" type="Request_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd32vweF0EvZE=" visibility="public" isStatic="false" isLeaf="false" type="Response_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd327QrGXhzfk=" name="Lemmatizer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGd328YjmYs8Wo=" name="buildData" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd3291kWZOliU=" name="data" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd3291kWZPuEQ=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd33w+GowJgxI=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd327QrGXhzfk=" general="AAAAAAGd33H+FmmwslA="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd32+G5maOItg=" name="StopWordsCleaner" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGd32/RPWbZUMY=" name="buildData" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33CDpmcE8Ac=" name="data" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd33CDpmcFn5Q=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd33xR4Y1wBQI=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd32+G5maOItg=" general="AAAAAAGd33H+FmmwslA="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd33C5RWgA/7A=" name="SintaxCleaner" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGd33DehWhLqaE=" name="buildData" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33Fccmht1yY=" name="data" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd33FccmhuG9w=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd33FdPWh92+0=" name="removeSymbols" visibility="private" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33HblmimWME=" name="dataPhrase" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd33HblminAmg=" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd33xmco8fj6A=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd33C5RWgA/7A=" general="AAAAAAGd33H+FmmwslA="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd33H+FmmwslA=" name="BaseDataBuilder" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGd33Ioomn7QnI=" name="nextBuilder" visibility="private" isStatic="false" isLeaf="false" type="DataBuilder_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGd33Jxq2pOREU=" name="setNextBuilder" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33N7BGq9f1U=" name="dataBuilder" visibility="public" isStatic="false" isLeaf="false" type="DataBuilder_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd33N7ymrIbVM=" name="buildData" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33PeYGrqryU=" name="data" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd33PeYGrrvWw=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<interfaceRealization xmi:id="AAAAAAGd33rvmHdh310=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd33H+FmmwslA=" contract="AAAAAAGd33P3EmudZtU="/>
+				<interfaceRealization xmi:id="AAAAAAGd33vqcYlXcjs=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd33H+FmmwslA=" contract="AAAAAAGd33P3EmudZtU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd33P3EmudZtU=" name="DataBuilder" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedMember xmi:id="AAAAAAGd33pxsW+9/44=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGd33pxsW++YcM=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="shared" isDerived="false" isID="false" type="AAAAAAGd33P3EmudZtU=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGd33pxsW+/ygk=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd33H+FmmwslA=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGd33pxsW++YcM="/>
+					<memberEnd xmi:idref="AAAAAAGd33pxsW+/ygk="/>
+				</ownedMember>
+				<ownedOperation xmi:id="AAAAAAGd33j/d2vvaag=" name="setNextBuilder" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33mEoGwRhNQ=" name="dataBuilder" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGd33P3EmudZtU=" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd33mFdGwc4g4=" name="buildData" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd33n/D2w+Mo0=" name="data" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd33n/D2w/jZY=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd333M05bhi20=" name="CosineSimilarityFactory" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd34TFjbsvHKI=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd333M05bhi20=" supplier="AAAAAAGd336G4ZitHwk="/>
+				<ownedOperation xmi:id="AAAAAAGd334jWZfk2t4=" name="createRecognizer" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd3355g5h1Eog=" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizer_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd34zCpPkoQEE=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd333M05bhi20=" general="AAAAAAGd336G4ZitHwk="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd336G4ZitHwk=" name="IntentRecognizerFactory" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd340Kzf5tZCc=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd336G4ZitHwk=" supplier="AAAAAAGd34EO7J5FP7s="/>
+				<ownedOperation xmi:id="AAAAAAGd337L9ZkZprA=" name="processUserIntent" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd34A0kZloI7M=" name="recognizerInputData" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizerInputData_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd34A0kZlpZ+k=" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizerResponse_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd34A1IZmEy+E=" name="createRecognizer" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd34DWo5nB/rA=" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizer_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd34EO7J5FP7s=" name="IntentRecognizer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedOperation xmi:id="AAAAAAGd34KZv7Kkz9Y=" name="verifyUserIntent" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd34NGMrLhIxY=" name="recognizerInputData" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizerInputData_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd34NGMrLi0Tw=" visibility="public" isStatic="false" isLeaf="false" type="IntentRecognizerResponse_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd34OkC7YAy/8=" name="CosineSimilarity" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGd34PTLLZsKlk=" name="verifyUserIntent" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd34R6bLap9sU=" name="recognizerInputData" visibility="public" isStatic="false" isLeaf="false" type="SimilarityBaseInputData_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd34R6bLaqP2U=" visibility="public" isStatic="false" isLeaf="false" type="SimilarityBasedResponse_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<interfaceRealization xmi:id="AAAAAAGd340p9QB27PE=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd34OkC7YAy/8=" contract="AAAAAAGd34EO7J5FP7s="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd347ikBgvSlI=" name="IntentRecognizerResponse" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd35Erah+b2s4=" name="uses" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd34EO7J5FP7s="/>
+				<ownedMember xmi:id="AAAAAAGd35NKHlIH4VY=" name="uses" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd34OkC7YAy/8="/>
+				<ownedMember xmi:id="AAAAAAGd4CLaPflL04Q=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGd4CLaPvlMkaA=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="shared" isDerived="false" isID="false" type="AAAAAAGd347ikBgvSlI=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGd4CLaPvlNsLg=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd336G4ZitHwk=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGd4CLaPvlMkaA="/>
+					<memberEnd xmi:idref="AAAAAAGd4CLaPvlNsLg="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGd4CL0FvxtvHE=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd336G4ZitHwk="/>
+				<ownedMember xmi:id="AAAAAAGd4CMp5f7h/L4=" name="use" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd336G4ZitHwk="/>
+				<ownedMember xmi:id="AAAAAAGd4CY9cSDWReA=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd347ikBgvSlI="/>
+				<ownedMember xmi:id="AAAAAAGd4CdFeBtfmys=" name="use" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd347ikBgvSlI=" supplier="AAAAAAGd34EO7J5FP7s="/>
+				<ownedAttribute xmi:id="AAAAAAGd35A7whi8PWk=" name="recognitionStatus" visibility="public" isStatic="false" isLeaf="false" type="Bool_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd35CbuxlcB7g=" name="IntentRecognizerInputData" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd35FTCiUF9DM=" name="uses" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd35CbuxlcB7g=" supplier="AAAAAAGd34EO7J5FP7s="/>
+				<ownedMember xmi:id="AAAAAAGd35GYiSepy8A=" name="uses" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd35CbuxlcB7g=" supplier="AAAAAAGd34OkC7YAy/8="/>
+				<ownedMember xmi:id="AAAAAAGd4CWggR5FJ/M=" name="use" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd35CbuxlcB7g=" supplier="AAAAAAGd336G4ZitHwk="/>
+				<ownedMember xmi:id="AAAAAAGd4CXjKCArAEY=" name="use" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd35CbuxlcB7g=" supplier="AAAAAAGd34EO7J5FP7s="/>
+				<ownedAttribute xmi:id="AAAAAAGd35DSdxnp/Gc=" name="userMessage" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd4B1spYMSuGo=" name="TransformerBasedSimilarityNetworkFactory" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGd4B397IOfiLs=" name="createRecognize" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd4B49PIP3Oj4=" visibility="public" isStatic="false" isLeaf="false" type="InterRecognizer_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd4B6PXolA78E=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd4B1spYMSuGo=" general="AAAAAAGd336G4ZitHwk="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd4CBhGMgtmIU=" name="SimilarityBasedResponse" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd4CEEbMukYj0=" name="use" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGd4CBhGMgtmIU=" supplier="AAAAAAGd336G4ZitHwk="/>
+				<ownedAttribute xmi:id="AAAAAAGd4CCp9Mi6sHQ=" name="maxSimilarityValue" visibility="public" isStatic="false" isLeaf="false" type="Float_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<generalization xmi:id="AAAAAAGd4CNljAOp6uM=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd4CBhGMgtmIU=" general="AAAAAAGd347ikBgvSlI="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd4CGSRdk7aDE=" name="Class1" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false"/>
+			<packagedElement xmi:id="AAAAAAGd4COcFAZnHpI=" name="SimilarityBasedInputData" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGd4CRZ1wb0Zps=" name="confidenceLimit" visibility="public" isStatic="false" isLeaf="false" type="Float_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGd4CSrCAevCeQ=" name="documentCorpus" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd4CTwOwg0O6M=" visibility="public" isStatic="false" isLeaf="false" type="List%3CString%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<generalization xmi:id="AAAAAAGd4CUb7w+/4Fw=" visibility="public" xmi:type="uml:Generalization" specific="AAAAAAGd4COcFAZnHpI=" general="AAAAAAGd35CbuxlcB7g="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGd4CnKf1em0hQ=" name="TransformerBasedSimilarityNetwork" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGd4C2zznYWdIg=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGd4C2zznYX+YI=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd4CnKf1em0hQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGd4C2zznYYEJs=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGd4CnKf1em0hQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGd4C2zznYX+YI="/>
+					<memberEnd xmi:idref="AAAAAAGd4C2zznYYEJs="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGd4CoinlgzOk0=" name="model" visibility="private" isStatic="false" isLeaf="false" type="SentenceTransformet_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGd4CqieFiws7E=" name="instance" visibility="private" isStatic="false" isLeaf="false" type="AAAAAAGd4CnKf1em0hQ=" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGd4CsP2FnhFwU=" name="TransfotemerBasedSimilarityNetwork" visibility="private" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation"/>
+				<ownedOperation xmi:id="AAAAAAGd4CugSlqL9o0=" name="getInstance" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd4CwbbVrjyUc=" visibility="public" isStatic="false" isLeaf="false" type="TransformerBasedSimilatiryNetwork_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAGd4CwcNVsAJj0=" name="verifyUserIntent" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGd4CzBYFtY8tA=" name="reconizerInputData" visibility="public" isStatic="false" isLeaf="false" type="SimilarityBaseInputData_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGd4CzBYVtZog0=" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGd4CBhGMgtmIU=" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<interfaceRealization xmi:id="AAAAAAGd4C0DDmD0K/Y=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAGd4CnKf1em0hQ=" contract="AAAAAAGd34EO7J5FP7s="/>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:id="Dict_id" xmi:type="uml:DataType" name="Dict"/>
+		<packagedElement xmi:id="Response_id" xmi:type="uml:DataType" name="Response"/>
+		<packagedElement xmi:id="Float_id" xmi:type="uml:DataType" name="Float"/>
+		<packagedElement xmi:id="Int_id" xmi:type="uml:DataType" name="Int"/>
+		<packagedElement xmi:id="List%3CDict%3E_id" xmi:type="uml:DataType" name="List%3CDict%3E"/>
+		<packagedElement xmi:id="Request_id" xmi:type="uml:DataType" name="Request"/>
+		<packagedElement xmi:id="MessagesResponsesGenerator_id" xmi:type="uml:DataType" name="MessagesResponsesGenerator"/>
+		<packagedElement xmi:id="List%3CBool%20Dict%3E_id" xmi:type="uml:DataType" name="List%3CBool%20Dict%3E"/>
+		<packagedElement xmi:id="List%3CString%3E_id" xmi:type="uml:DataType" name="List%3CString%3E"/>
+		<packagedElement xmi:id="String_id" xmi:type="uml:DataType" name="String"/>
+		<packagedElement xmi:id="DataBuilder_id" xmi:type="uml:DataType" name="DataBuilder"/>
+		<packagedElement xmi:id="IntentRecognizer_id" xmi:type="uml:DataType" name="IntentRecognizer"/>
+		<packagedElement xmi:id="IntentRecognizerInputData_id" xmi:type="uml:DataType" name="IntentRecognizerInputData"/>
+		<packagedElement xmi:id="IntentRecognizerResponse_id" xmi:type="uml:DataType" name="IntentRecognizerResponse"/>
+		<packagedElement xmi:id="SimilarityBaseInputData_id" xmi:type="uml:DataType" name="SimilarityBaseInputData"/>
+		<packagedElement xmi:id="SimilarityBasedResponse_id" xmi:type="uml:DataType" name="SimilarityBasedResponse"/>
+		<packagedElement xmi:id="Bool_id" xmi:type="uml:DataType" name="Bool"/>
+		<packagedElement xmi:id="InterRecognizer_id" xmi:type="uml:DataType" name="InterRecognizer"/>
+		<packagedElement xmi:id="SentenceTransformet_id" xmi:type="uml:DataType" name="SentenceTransformet"/>
+		<packagedElement xmi:id="TransformerBasedSimilatiryNetwork_id" xmi:type="uml:DataType" name="TransformerBasedSimilatiryNetwork"/>
+	</uml:Model>
+</xmi:XMI>

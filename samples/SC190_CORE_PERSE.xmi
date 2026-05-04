@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="StarUML" exporterVersion="2.0"/>
+	<uml:Model xmi:id="AAAAAAGdvDIbQCFl/Ck=" xmi:type="uml:Model" name="RootModel">
+		<packagedElement xmi:id="AAAAAAFF+qBWK6M3Z8Y=" name="Model" visibility="public" xmi:type="uml:Model">
+			<packagedElement xmi:id="AAAAAAGdu5XP/0Qy0NE=" name="NormativaEntity" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false"/>
+			<packagedElement xmi:id="AAAAAAGdu5YED0RcEWw=" name="NormativaProyecto" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false"/>
+			<packagedElement xmi:id="AAAAAAGdu5fJZkS21Yo=" name="ConfiguracionSistemaPostulacion" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdu54vikXLmsA=" name="reglas" visibility="public" isStatic="false" isLeaf="false" type="ReglasNormativa_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu55z90XSo+c=" name="mensajes" visibility="public" isStatic="false" isLeaf="false" type="Mensajes_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu59yQ0XkaZU=" name="propiedades_sys" visibility="public" isStatic="false" isLeaf="false" type="PropiedadesSistema_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu5/P2EXrtm4=" name="mensajes" visibility="public" isStatic="false" isLeaf="false" type="MensajesNormativa_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu5gb2UTirLk=" name="ProyectoDAO" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGdu50gwUWwCxo=" name="getById" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu510v0W3kvY=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu510v0W4AWM=" visibility="public" isStatic="false" isLeaf="false" type="Proyecto_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu5hb0UUMcFQ=" name="CargaConfiguracionUseCase" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu6GdVUX3czo=" name="creates" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu6GdVUX47k8=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5hb0UUMcFQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu6GdVkX5SOE=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5fJZkS21Yo=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu6GdVUX47k8="/>
+					<memberEnd xmi:idref="AAAAAAGdu6GdVkX5SOE="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGdu6IJNUaPqLg=" name="uses" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu6IJNUaQK8A=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5hb0UUMcFQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu6IJNUaRxzE=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5juKEVo33w=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu6IJNUaQK8A="/>
+					<memberEnd xmi:idref="AAAAAAGdu6IJNUaRxzE="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGdu6JF9UmxC2c=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu5hb0UUMcFQ=" supplier="AAAAAAGdu5gb2UTirLk="/>
+				<ownedMember xmi:id="AAAAAAGdu6JZLUpq6q0=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu5hb0UUMcFQ=" supplier="AAAAAAGdu5i/a0U+lUQ="/>
+				<ownedMember xmi:id="AAAAAAGdu6h+v1+5LM0=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu6h+v1+6lMg=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5hb0UUMcFQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu6h+v1+7ar4=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu6cAoVu5NAQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu6h+v1+6lMg="/>
+					<memberEnd xmi:idref="AAAAAAGdu6h+v1+7ar4="/>
+				</ownedMember>
+				<ownedOperation xmi:id="AAAAAAGdu5w05EWhaPk=" name="invocar" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu5y/N0Wop5Q=" name="usuario" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu5y/N0WpEk8=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu5y/N0WqqQI=" visibility="public" isStatic="false" isLeaf="false" type="ConfiguracionSistemaPostulacion_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu5i/a0U+lUQ=" name="ConvocatoriaDAO" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedOperation xmi:id="AAAAAAGdu52cEUW7VlE=" name="getByIdProyecto" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu53770XCTPE=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu53770XDUtE=" visibility="public" isStatic="false" isLeaf="false" type="Convocatoria_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu5juKEVo33w=" name="Usuario" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdu5u0dkWSCp8=" name="id" visibility="public" isStatic="false" isLeaf="false" type="int_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu5vaKEWZxxA=" name="rol" visibility="public" isStatic="false" isLeaf="false" type="RolUsuario_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu6RreVSEq00=" name="AgregarLineaDeInvestigacionUseCase" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu6WyKVjTbQM=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu6RreVSEq00=" supplier="AAAAAAGdu5fJZkS21Yo="/>
+				<ownedAttribute xmi:id="AAAAAAGdu6TSlVTwRis=" name="conf" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu5fJZkS21Yo=" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGdu6UvglVvkDM=" name="invocar" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu6WGaFXK+w4=" name="line" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu6WGaFXLTi4=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu6WGaFXMOLU=" visibility="public" isStatic="false" isLeaf="false" type="UseCaseResponse_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu6XCSFk+/q0=" name="CargarAsignacionesPresupuestoUseCase" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu6a2gVs2iYs=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu6XCSFk+/q0=" supplier="AAAAAAGdu5fJZkS21Yo="/>
+				<ownedAttribute xmi:id="AAAAAAGdu6YTtlmq/yE=" name="conf" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu5fJZkS21Yo=" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGdu6ZaOlopDVw=" name="invocar" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu6aheVqE0c0=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu6aheVqFXb0=" visibility="public" isStatic="false" isLeaf="false" type="UseCaseResponse_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu6cAoVu5NAQ=" name="NormativaProyectoInteractor" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedOperation xmi:id="AAAAAAGdu6dLNlwyZMY=" name="cargarConfiguracion" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu6eWuFxvigQ=" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu5fJZkS21Yo=" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu6iWzWImIrE=" name="SeccionPresupuestoController" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu6qiz2sNvcM=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu6iWzWImIrE=" supplier="AAAAAAGdu6cAoVu5NAQ="/>
+				<ownedAttribute xmi:id="AAAAAAGdu6jGcWKzmr0=" name="interactor" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu6cAoVu5NAQ=" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu6kUamMd+I4=" name="propiedades_sys" visibility="public" isStatic="false" isLeaf="false" type="PropiedadesSistema_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu6lmmmOHAOA=" name="habilitarBotonEliminar" visibility="public" isStatic="false" isLeaf="false" type="Bool_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu6mgwmPx4mU=" name="habilitarCheckboxDI" visibility="public" isStatic="false" isLeaf="false" type="Bool_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu6nUCmRbiS4=" name="mensajeCorteccion" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGdu6oe7mWLJUg=" name="inicializarVista" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation"/>
+				<ownedOperation xmi:id="AAAAAAGdu6pQ+2ZPaUc=" name="habilitarBotonesVista" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu75xTX5NNtw=" name="CargarObjetivosDeDesarrolloUseCase" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu8TJG7sjk+0=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu8TJHLsk038=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu75xTX5NNtw=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu8TJHLslV8c=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu8GTYaIyvXo=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu8TJHLsk038="/>
+					<memberEnd xmi:idref="AAAAAAGdu8TJHLslV8c="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGdu8Two8Bfax8=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu75xTX5NNtw=" supplier="AAAAAAGdu5fJZkS21Yo="/>
+				<ownedAttribute xmi:id="AAAAAAGdu77HwX7axRQ=" name="conf" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu5fJZkS21Yo=" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedOperation xmi:id="AAAAAAGdu786tX+D/WQ=" name="invocar" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu7+rW4AI3UQ=" name="id_pry" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu7+rW4AJzPs=" visibility="public" isStatic="false" isLeaf="false" type="List%3CObjetivoDesarrolloSostenible%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu8GTYaIyvXo=" name="ObjeivoDesarrolloSostenible" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu8UQbMNy2eA=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu8UQbMNznmo=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu8GTYaIyvXo=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu8UQbMN0Vp0=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu8JpMaPJl04=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu8UQbMNznmo="/>
+					<memberEnd xmi:idref="AAAAAAGdu8UQbMN0Vp0="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGdu8IN5KK/b78=" name="nombre_obejtivo" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu8I7LaMpk38=" name="seleccionado" visibility="public" isStatic="false" isLeaf="false" type="Bool_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu8JpMaPJl04=" name="ReglasNormativa" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdu8VL5MY7GIY=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdu8VL5MY8OUU=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="composite" isDerived="false" isID="false" type="AAAAAAGdu8JpMaPJl04=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdu8VL5MY9Awo=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu5fJZkS21Yo=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdu8VL5MY8OUU="/>
+					<memberEnd xmi:idref="AAAAAAGdu8VL5MY9Awo="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGdu8O2lrfYob8=" name="ods" visibility="public" isStatic="false" isLeaf="false" type="List%3CObjetivoDesarrolloSostenible%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu8QaKLhC7tA=" name="otras_reglas" visibility="public" isStatic="false" isLeaf="false" type="Object_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu8eskOJaLCQ=" name="CargarDatosPresupuestoUseCase" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdvCHTGnCxevk=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu8eskOJaLCQ=" supplier="AAAAAAGdu5fJZkS21Yo="/>
+				<ownedMember xmi:id="AAAAAAGdvCor5OcS9QU=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu8eskOJaLCQ=" supplier="AAAAAAGdvCWQ17H1iNc="/>
+				<ownedMember xmi:id="AAAAAAGdvCo8quk/Zx8=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu8eskOJaLCQ=" supplier="AAAAAAGdvCfdGdQBzY0="/>
+				<ownedMember xmi:id="AAAAAAGdvCpMy+t+ZWI=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAGdu8eskOJaLCQ=" supplier="AAAAAAGdvCjeAdtSnu0="/>
+				<ownedOperation xmi:id="AAAAAAGdu+gy1/A7fEA=" name="invocar" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdu+k24PDkc5U=" name="idProyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdu+k24fDl8kk=" visibility="public" isStatic="false" isLeaf="false" type="List%3CItemnAsignacionPresupuesto%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu+oULvQleXQ=" name="ItemPresupuestoConvocatoria" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdvCqNXfT+8w0=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvCqNXfT/OT0=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu+oULvQleXQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvCqNXfUA1/g=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu8eskOJaLCQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvCqNXfT/OT0="/>
+					<memberEnd xmi:idref="AAAAAAGdvCqNXfUA1/g="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGdu+pb7/UV2T8=" name="item" visibility="public" isStatic="false" isLeaf="false" type="ItemPresupuesto_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+qVj/Xi/hw=" name="porcentajeMaximo" visibility="public" isStatic="false" isLeaf="false" type="Number_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+rcsPaveIE=" name="posicion" visibility="public" isStatic="false" isLeaf="false" type="number_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu+sPzvxq2G8=" name="Convocatoria" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdvC5IOGBo3Jo=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvC5IOGBpTZU=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu+sPzvxq2G8=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvC5IOGBqWtg=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvBI9cBYrGIw=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvC5IOGBpTZU="/>
+					<memberEnd xmi:idref="AAAAAAGdvC5IOGBqWtg="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGdu+s3GP1ab3Y=" name="id" visibility="public" isStatic="false" isLeaf="false" type="Int_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+tS4P4n/uI=" name="reglas" visibility="public" isStatic="false" isLeaf="false" type="JSON_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvBHtaBSYnuc=" name="normativa" visibility="public" isStatic="false" isLeaf="false" type="JSON_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdu+trnv8Gi+g=" name="AsignacionPresupuesto" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdu+ua6f/2irk=" name="item" visibility="public" isStatic="false" isLeaf="false" type="ItemPresupuesto_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+vGhwDDq4Y=" name="concepto" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+vl0gGQNJU=" name="semestre" visibility="public" isStatic="false" isLeaf="false" type="Number_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdu+wJlwJdTns=" name="cantidad" visibility="public" isStatic="false" isLeaf="false" type="Money_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvBCMlg82Wyo=" name="ItemAsignacionPresupuesto" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdvBDFSBAmc9A=" name="item" visibility="public" isStatic="false" isLeaf="false" type="ItemPreupuesto_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvBDsRxDzECk=" name="asignaciones" visibility="public" isStatic="false" isLeaf="false" type="List%3CAsignacionPreupuesto%3E_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvBFYChHAUa8=" name="total" visibility="public" isStatic="false" isLeaf="false" type="Money_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvBI9cBYrGIw=" name="Proyectos" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdvBKBjBq6NNQ=" name="id" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvBKlIBvhMdc=" name="id_convocatoria" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvBLjFxyuoR4=" name="estado" visibility="public" isStatic="false" isLeaf="false" type="String_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvB9D5ili3zk=" name="ObservacionValidaci%C3%B3n" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdvB+BRypSv+Y=" name="id" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvB+UhCsf9oI=" name="id_validacion_seccion" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvB/GTCvsg/w=" name="observacion" visibility="public" isStatic="false" isLeaf="false" type="text_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvB/lQCy5y5k=" name="fecha" visibility="public" isStatic="false" isLeaf="false" type="date_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvCAo4C5MCkQ=" name="Validaci%C3%B3nSeccion" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedMember xmi:id="AAAAAAGdvC7F4arAApI=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvC7F4arBpqg=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="composite" isDerived="false" isID="false" type="AAAAAAGdvCAo4C5MCkQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvC7F4arC84U=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvB9D5ili3zk=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvC7F4arBpqg="/>
+					<memberEnd xmi:idref="AAAAAAGdvC7F4arC84U="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGdvC7/ea+8gZs=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvC7/ea+91ow=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="composite" isDerived="false" isID="false" type="AAAAAAGdvCAo4C5MCkQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvC7/ea++1t4=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvBI9cBYrGIw=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvC7/ea+91ow="/>
+					<memberEnd xmi:idref="AAAAAAGdvC7/ea++1t4="/>
+				</ownedMember>
+				<ownedMember xmi:id="AAAAAAGdvC8QALXhx/o=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvC8QALXis+0=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="composite" isDerived="false" isID="false" type="AAAAAAGdvCAo4C5MCkQ=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvC8QALXjn2k=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvCJnYpZn9t8=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvC8QALXis+0="/>
+					<memberEnd xmi:idref="AAAAAAGdvC8QALXjn2k="/>
+				</ownedMember>
+				<ownedAttribute xmi:id="AAAAAAGdvCBRsC88mXs=" name="id" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvCBvDzAJFAw=" name="id_proyecto" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvCCVzTDWzOQ=" name="ide_seccion_postulacion" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvCDGITGjXlA=" name="requiere_correcion" visibility="public" isStatic="false" isLeaf="false" type="bool_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvCJnYpZn9t8=" name="SeccionPostulacion" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
+				<ownedAttribute xmi:id="AAAAAAGdvCKLQ5dXf34=" name="id" visibility="public" isStatic="false" isLeaf="false" type="integer_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvCKlFpgkpdA=" name="nombre_seccion" visibility="public" isStatic="false" isLeaf="false" type="text_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+				<ownedAttribute xmi:id="AAAAAAGdvCLHhpjxt6o=" name="c%C3%B3digo_seccion" visibility="public" isStatic="false" isLeaf="false" type="text_id" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false"/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvCWQ17H1iNc=" name="ItemConvocatoriaDAO" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedMember xmi:id="AAAAAAGdvCyoHSnmg94=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvCyoHSnnHWA=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvCWQ17H1iNc=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvCyoHSno/B0=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvBCMlg82Wyo=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvCyoHSnnHWA="/>
+					<memberEnd xmi:idref="AAAAAAGdvCyoHSno/B0="/>
+				</ownedMember>
+				<ownedOperation xmi:id="AAAAAAGdvCXJibMK14g=" name="getItemsRelacionados" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdvCZFTLOzjXo=" name="idConvocatoria" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvCfdGdQBzY0=" name="ConvocatoriaDAO" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedMember xmi:id="AAAAAAGdvCy0BSyKZiw=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvCy0BSyLlWo=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvCfdGdQBzY0=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvCy0BSyMSyQ=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu+sPzvxq2G8=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvCy0BSyLlWo="/>
+					<memberEnd xmi:idref="AAAAAAGdvCy0BSyMSyQ="/>
+				</ownedMember>
+				<ownedOperation xmi:id="AAAAAAGdvCgUG9UWi68=" name="getByProyectoId" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdvCjE49W/xu0=" name="idProyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAGdvCjE49XAYtU=" visibility="public" isStatic="false" isLeaf="false" type="AAAAAAGdu+sPzvxq2G8=" isReadOnly="false" isOrdered="false" isUnique="false" direction="return" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAGdvCjeAdtSnu0=" name="AsignacionPresupuestoDa" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedMember xmi:id="AAAAAAGdvCzA9i/oWt8=" visibility="public" xmi:type="uml:Association" isDerived="false">
+					<ownedEnd xmi:id="AAAAAAGdvCzA9i/p3o4=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdvCjeAdtSnu0=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<ownedEnd xmi:id="AAAAAAGdvCzA9i/qrcI=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGdu+trnv8Gi+g=">
+						<xmi:Extension extender="StarUML">
+							<stereotype value=""/>
+						</xmi:Extension>
+					</ownedEnd>
+					<memberEnd xmi:idref="AAAAAAGdvCzA9i/p3o4="/>
+					<memberEnd xmi:idref="AAAAAAGdvCzA9i/qrcI="/>
+				</ownedMember>
+				<ownedOperation xmi:id="AAAAAAGdvCknSdxnLrg=" name="getAsignaciones" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAGdvClait0iCCI=" name="idProyecto" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+		</packagedElement>
+		<packagedElement xmi:id="ReglasNormativa_id" xmi:type="uml:DataType" name="ReglasNormativa"/>
+		<packagedElement xmi:id="Mensajes_id" xmi:type="uml:DataType" name="Mensajes"/>
+		<packagedElement xmi:id="PropiedadesSistema_id" xmi:type="uml:DataType" name="PropiedadesSistema"/>
+		<packagedElement xmi:id="MensajesNormativa_id" xmi:type="uml:DataType" name="MensajesNormativa"/>
+		<packagedElement xmi:id="Proyecto_id" xmi:type="uml:DataType" name="Proyecto"/>
+		<packagedElement xmi:id="ConfiguracionSistemaPostulacion_id" xmi:type="uml:DataType" name="ConfiguracionSistemaPostulacion"/>
+		<packagedElement xmi:id="Convocatoria_id" xmi:type="uml:DataType" name="Convocatoria"/>
+		<packagedElement xmi:id="int_id" xmi:type="uml:DataType" name="int"/>
+		<packagedElement xmi:id="RolUsuario_id" xmi:type="uml:DataType" name="RolUsuario"/>
+		<packagedElement xmi:id="UseCaseResponse_id" xmi:type="uml:DataType" name="UseCaseResponse"/>
+		<packagedElement xmi:id="Bool_id" xmi:type="uml:DataType" name="Bool"/>
+		<packagedElement xmi:id="String_id" xmi:type="uml:DataType" name="String"/>
+		<packagedElement xmi:id="List%3CObjetivoDesarrolloSostenible%3E_id" xmi:type="uml:DataType" name="List%3CObjetivoDesarrolloSostenible%3E"/>
+		<packagedElement xmi:id="Object_id" xmi:type="uml:DataType" name="Object"/>
+		<packagedElement xmi:id="List%3CItemnAsignacionPresupuesto%3E_id" xmi:type="uml:DataType" name="List%3CItemnAsignacionPresupuesto%3E"/>
+		<packagedElement xmi:id="ItemPresupuesto_id" xmi:type="uml:DataType" name="ItemPresupuesto"/>
+		<packagedElement xmi:id="Number_id" xmi:type="uml:DataType" name="Number"/>
+		<packagedElement xmi:id="number_id" xmi:type="uml:DataType" name="number"/>
+		<packagedElement xmi:id="Int_id" xmi:type="uml:DataType" name="Int"/>
+		<packagedElement xmi:id="JSON_id" xmi:type="uml:DataType" name="JSON"/>
+		<packagedElement xmi:id="Money_id" xmi:type="uml:DataType" name="Money"/>
+		<packagedElement xmi:id="ItemPreupuesto_id" xmi:type="uml:DataType" name="ItemPreupuesto"/>
+		<packagedElement xmi:id="List%3CAsignacionPreupuesto%3E_id" xmi:type="uml:DataType" name="List%3CAsignacionPreupuesto%3E"/>
+		<packagedElement xmi:id="integer_id" xmi:type="uml:DataType" name="integer"/>
+		<packagedElement xmi:id="text_id" xmi:type="uml:DataType" name="text"/>
+		<packagedElement xmi:id="date_id" xmi:type="uml:DataType" name="date"/>
+		<packagedElement xmi:id="bool_id" xmi:type="uml:DataType" name="bool"/>
+	</uml:Model>
+</xmi:XMI>

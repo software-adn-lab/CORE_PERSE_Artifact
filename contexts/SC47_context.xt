@@ -1,0 +1,66 @@
+Título de la tesis:
+“Diseño y desarrollo del Back-End de una aplicación software como soporte a la reducción del número de animales de compañía sin hogar en el Distrito Metropolitano de Quito”
+
+Autor / Institución:
+Gandhy Gabriel García Castañeda – Facultad de Ingeniería de Sistemas, Escuela Politécnica Nacional
+
+Problema que aborda:
+• Alto número de animales de compañía sin hogar en Quito (más de 1 millón entre perros y gatos).
+• Falta de plataformas centralizadas que faciliten la adopción responsable.
+• Uso informal de redes sociales que puede generar problemas (falta de control sanitario, desinformación).
+• Necesidad de concientización ciudadana sobre la tenencia responsable mediante herramientas digitales.
+
+Objetivo general del componente lógico:
+Desarrollar el Back-End de una aplicación móvil que gestione la lógica de negocio, almacenamiento de datos y exposición de funcionalidades mediante una API REST para soportar procesos de adopción de animales y concientización ciudadana.
+
+Metodología:
+• Marco ágil SCRUM con 6 sprints + Sprint 0 de planificación.
+• Arquitectura limpia combinando:
+– Arquitectura hexagonal (puertos y adaptadores)
+– Arquitectura por capas (cebolla)
+• Uso de principios SOLID e inyección de dependencias.
+
+Estructura de módulos (a partir del backend y XMI):
+– user / profile : autenticación, registro, JWT
+– publication : publicaciones de adopción y experiencias
+– interaction : comentarios, likes, favoritos
+– game / gamification : juegos educativos y leaderboard
+– organization : información de fundaciones y entidades
+– media services : almacenamiento de imágenes (Firebase)
+
+Cada módulo sigue capas:
+• domain (entidades, interfaces)
+• application (casos de uso)
+• infrastructure (API, DB, frameworks)
+
+Detalle del núcleo del sistema (base para métricas):
+• Entidades principales: User, Publication, AdoptionPublication, Comment, Like, Game, Score.
+• Servicios de aplicación: casos de uso por entidad (CreatePublication, Login, AddComment, etc.).
+• Infraestructura:
+– FastAPI controllers (endpoints REST)
+– MongoDB repositories
+– Firebase Storage (archivos multimedia)
+
+• Funcionalidades clave:
+– Publicación y visualización de adopciones
+– Interacción social (comentarios, likes)
+– Juegos educativos con puntajes
+– Gestión de usuarios y autenticación
+
+Escala del proyecto (para normalización de métricas):
+• Documento ~100 páginas (tesis de grado).
+• Backend desarrollado en Python + FastAPI + MongoDB + Docker.
+• Arquitectura con múltiples entidades (~15–25 clases principales estimadas desde el XMI).
+• Diagrama de clases completo del backend (Figura 4) con múltiples relaciones.
+• Sistema académico de tamaño medio con múltiples módulos funcionales.
+
+Consejos para tu calibrador automático (adaptado a esta tesis):
+
+1. Analiza el XMI completo para obtener distribución de métricas (WMC, ATFD, Fan-Out).
+2. Usa umbrales relativos (percentiles) en lugar de valores fijos.
+3. Considera la capa:
+– Controllers → alto Fan-Out esperado
+– Repositories → alto acceso a datos sin ser God Class
+4. Ten en cuenta que es arquitectura limpia → muchas clases pequeñas especializadas.
+5. Ajusta umbrales más bajos que sistemas industriales, pero más altos que proyectos simples (por ser sistema modular completo).
+Guarda configuración en config.json para reutilizar el calibrador en otros XMI.
