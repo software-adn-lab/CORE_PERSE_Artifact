@@ -1,0 +1,265 @@
+{
+  "god_class": [
+    {
+      "class": "cliente",
+      "score": 0.38,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.07,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "comprobante_de_retencion",
+      "score": 0.38,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.07,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "comprobante_de_retencion_detalle",
+      "score": 0.33,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 19,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "destinatario",
+      "score": 0.36,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 23,
+        "ATFD": 0,
+        "TCC": 0.09,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "direccion",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 9,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "empresa",
+      "score": 0.45,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 37,
+        "ATFD": 0,
+        "TCC": 0.03,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "factura",
+      "score": 0.49,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 43,
+        "ATFD": 0,
+        "TCC": 0.03,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "factura_detalle",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 27,
+        "ATFD": 0,
+        "TCC": 0.09,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "factura_pago",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 21,
+        "ATFD": 0,
+        "TCC": 0.14,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "guia_de_remision",
+      "score": 0.41,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 30,
+        "ATFD": 0,
+        "TCC": 0.05,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "impuesto",
+      "score": 0.29,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 11,
+        "ATFD": 0,
+        "TCC": 0.13,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "nota_de_credito",
+      "score": 0.46,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 39,
+        "ATFD": 0,
+        "TCC": 0.04,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "nota_de_credito_detalle",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 27,
+        "ATFD": 0,
+        "TCC": 0.09,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "nota_de_debito",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 27,
+        "ATFD": 0,
+        "TCC": 0.06,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "nota_de_debito_detalle",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.29,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "nota_de_debito_pago",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 21,
+        "ATFD": 0,
+        "TCC": 0.14,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "producto",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 19,
+        "ATFD": 0,
+        "TCC": 0.08,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "producto_impuesto",
+      "score": 0.29,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 15,
+        "ATFD": 0,
+        "TCC": 0.26,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "transportista",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 19,
+        "ATFD": 0,
+        "TCC": 0.08,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "usuario",
+      "score": 0.33,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.1,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}

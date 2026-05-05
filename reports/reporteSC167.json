@@ -1,104 +1,104 @@
 {
   "god_class": [
     {
-      "class": "ResponseFormatter",
-      "score": 0.4,
+      "class": "Accion",
+      "score": 0.37,
       "label": "suspicious",
       "metrics": {
-        "WMC": 2,
+        "WMC": 17,
         "ATFD": 0,
-        "TCC": 0.0,
+        "TCC": 0.28,
         "FanIn": 0,
         "FanOut": 0,
         "LRC": 1
       }
     },
     {
-      "class": "MesagesResonsesGenerator",
-      "score": 0.47,
+      "class": "Mantenimiento",
+      "score": 0.44,
       "label": "god-class",
       "metrics": {
-        "WMC": 3,
+        "WMC": 21,
         "ATFD": 0,
-        "TCC": 0.0,
+        "TCC": 0.19,
         "FanIn": 0,
         "FanOut": 0,
         "LRC": 1
       }
     },
     {
-      "class": "MessagesProxy",
-      "score": 0.4,
+      "class": "Operacion",
+      "score": 0.31,
       "label": "suspicious",
       "metrics": {
-        "WMC": 2,
+        "WMC": 13,
         "ATFD": 0,
-        "TCC": 0.0,
+        "TCC": 0.29,
         "FanIn": 0,
         "FanOut": 0,
         "LRC": 1
       }
     },
     {
-      "class": "SintaxCleaner",
-      "score": 0.4,
-      "label": "suspicious",
-      "metrics": {
-        "WMC": 2,
-        "ATFD": 0,
-        "TCC": 0.0,
-        "FanIn": 0,
-        "FanOut": 0,
-        "LRC": 1
-      }
-    },
-    {
-      "class": "BaseDataBuilder",
-      "score": 0.4,
-      "label": "suspicious",
-      "metrics": {
-        "WMC": 2,
-        "ATFD": 0,
-        "TCC": 0.0,
-        "FanIn": 0,
-        "FanOut": 0,
-        "LRC": 1
-      }
-    },
-    {
-      "class": "DataBuilder",
-      "score": 0.4,
-      "label": "suspicious",
-      "metrics": {
-        "WMC": 2,
-        "ATFD": 0,
-        "TCC": 0.0,
-        "FanIn": 0,
-        "FanOut": 0,
-        "LRC": 1
-      }
-    },
-    {
-      "class": "IntentRecognizerFactory",
-      "score": 0.4,
-      "label": "suspicious",
-      "metrics": {
-        "WMC": 2,
-        "ATFD": 0,
-        "TCC": 0.0,
-        "FanIn": 0,
-        "FanOut": 0,
-        "LRC": 1
-      }
-    },
-    {
-      "class": "TransformerBasedSimilarityNetwork",
-      "score": 0.47,
+      "class": "PlanMantenimiento",
+      "score": 0.41,
       "label": "god-class",
       "metrics": {
-        "WMC": 3,
+        "WMC": 19,
         "ATFD": 0,
-        "TCC": 0.0,
+        "TCC": 0.23,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Plantilla",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 19,
+        "ATFD": 0,
+        "TCC": 0.33,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Rango",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 9,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Tecnico",
+      "score": 0.31,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.31,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Usuario",
+      "score": 0.33,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.18,
         "FanIn": 0,
         "FanOut": 0,
         "LRC": 1

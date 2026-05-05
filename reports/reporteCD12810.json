@@ -1,0 +1,291 @@
+{
+  "god_class": [
+    {
+      "class": "TBL_ASISTENCIA",
+      "score": 0.36,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 23,
+        "ATFD": 0,
+        "TCC": 0.23,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_ASISTENCIA_ESPECIAL",
+      "score": 0.28,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 15,
+        "ATFD": 0,
+        "TCC": 0.35,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_ASISTENCIA_TECNICA",
+      "score": 0.28,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.29,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_CALENDARIO_ACADEMICO",
+      "score": 0.31,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.1,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_CARACTERISTICAS_COMP",
+      "score": 0.36,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 23,
+        "ATFD": 0,
+        "TCC": 0.23,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_CUSTODIO",
+      "score": 0.46,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 35,
+        "ATFD": 0,
+        "TCC": 0.04,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_DOCENTE",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 9,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_EQUIPO",
+      "score": 0.44,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 31,
+        "ATFD": 0,
+        "TCC": 0.04,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_EQUIPO_CUSTODIO",
+      "score": 0.31,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.28,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_ESTUDIANTE",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 9,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_ESTUDIANTE_SERVICIO",
+      "score": 0.37,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.2,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_HISTORIAL_EQUIPO",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 21,
+        "ATFD": 0,
+        "TCC": 0.27,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_HISTORIAL_UBIC_EQUIPO",
+      "score": 0.31,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.28,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_JUSTIFICACION_INCIDENTE",
+      "score": 0.28,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.29,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_PERSONAL_LABFIS",
+      "score": 0.36,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 21,
+        "ATFD": 0,
+        "TCC": 0.08,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_PRESTAMO_EQUIPO",
+      "score": 0.44,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 35,
+        "ATFD": 0,
+        "TCC": 0.18,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_SOLICITUD_SERVICIOS",
+      "score": 0.51,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 43,
+        "ATFD": 0,
+        "TCC": 0.1,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_USUARIO",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.1,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBL_USUARIO_PRESTAMO",
+      "score": 0.41,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 29,
+        "ATFD": 0,
+        "TCC": 0.15,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBP_CARACT_EQUIPO",
+      "score": 0.29,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.4,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBP_TIPO_SERVICIO",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 9,
+        "ATFD": 0,
+        "TCC": 0.17,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TBP_UBICACION_EQUIPO",
+      "score": 0.29,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 11,
+        "ATFD": 0,
+        "TCC": 0.13,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}

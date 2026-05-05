@@ -1,0 +1,174 @@
+{
+  "god_class": [
+    {
+      "class": "address",
+      "score": 0.38,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.2,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "banks",
+      "score": 0.28,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 11,
+        "ATFD": 0,
+        "TCC": 0.13,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "contract",
+      "score": 0.44,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 33,
+        "ATFD": 0,
+        "TCC": 0.22,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "deparment",
+      "score": 0.27,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 13,
+        "ATFD": 0,
+        "TCC": 0.29,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "discount",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.18,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "familiar",
+      "score": 0.38,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 25,
+        "ATFD": 0,
+        "TCC": 0.2,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "income",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.18,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "parameters",
+      "score": 0.29,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 15,
+        "ATFD": 0,
+        "TCC": 0.27,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "paymentMethods",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 21,
+        "ATFD": 0,
+        "TCC": 0.27,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "payroll",
+      "score": 0.38,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 23,
+        "ATFD": 0,
+        "TCC": 0.11,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "person",
+      "score": 0.45,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 33,
+        "ATFD": 0,
+        "TCC": 0.12,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "positions",
+      "score": 0.31,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 17,
+        "ATFD": 0,
+        "TCC": 0.21,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "user",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 15,
+        "ATFD": 0,
+        "TCC": 0.09,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}
