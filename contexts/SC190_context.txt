@@ -1,0 +1,50 @@
+Título de la tesis:
+“APLICACIÓN WEB DE CONTROL Y SEGUIMIENTO DE ADOPCIONES (BACKEND) - APOYO A LA ADMINISTRACIÓN DEL CLUB DE BIENESTAR ANIMAL DE LA EPN”  
+
+Autor / Institución:
+Daniel Alejandro Vargas León – Facultad de Ingeniería de Sistemas, Escuela Politécnica Nacional (EPN), Quito, Ecuador.  
+
+Problema que aborda:
+•  Gestión ineficiente: Necesidad de centralizar la información del Club "PoliPerros" y mejorar la administración de sus procesos internos.  
+
+Problemática de Fauna Urbana: Los animales en situación de calle en Quito (1 perro por cada 19 habitantes) generan problemas de salud y seguridad.  
+
+•  Abandono Animal: Falta de herramientas tecnológicas para promover la tenencia responsable y realizar el seguimiento efectivo de las adopciones para evitar el re-abandono.  
+
+Objetivo general del componente lógico:
+• Crear un sistema Backend que facilite la administración efectiva de la información relacionada con tutores, visitas de seguimiento y estados de los animales (permanentes, temporales y adoptados), garantizando la integridad de los datos y optimizando la comunicación mediante una API REST.  
+
+Metodología:
+•  Marco de Trabajo Ágil: Implementación de SCRUM con 5 Sprints (duración de 4 semanas cada uno).  
+•  Arquitectura de Software: Desarrollo orientado a servicios mediante una API RESTful.  
+
+Estructura de Módulos:
+
+• Gestión de Perros: Registro y control de estados (permanente, temporal, adoptado).  
+• Gestión de Usuarios: Control de acceso basado en roles (Administrador y Auxiliar).  
+• Seguimiento y Visitas: Registro de visitas post-adopción para asegurar el bienestar animal.  
+• Gestión de Cursos: Administración de capacitaciones sobre adiestramiento y tenencia responsable.  
+
+Detalle del módulo de reconocimiento (base para arquitectura):
+• Entidades de Dominio (XMI): StaticDog, AdoptionDog, AdoptedDog, Owner, User, Visit, Course.  
+
+Patrones y Herramientas:
+
+• ORM: Uso de mapeo objeto-relacional para alinear el código con la base de datos MySQL (XAMMP).  
+• Framework: FastAPI (Python 3.11), aprovechando la validación de datos con Pydantic y documentación automática con Swagger.  
+• Infraestructura: Contenedores Docker para despliegue consistente y GitHub Actions para integración y despliegue continuo (CI/CD) en Azure.  
+• Seguridad: Autenticación mediante generación de Tokens (JWT) y restricción de endpoints según el rol del usuario.  
+
+Escala del proyecto (pistas para normalizar métricas):
+• Complejidad: Alta cohesión en los modelos de datos de perros (Dog) y sus especializaciones. La complejidad lógica se centra en la transición de estados del animal (e.g., de temporal a adoptado al asociarse con un Owner).  
+• Acoplamiento: Fan-Out moderado en los controladores de "Adopción", ya que deben interactuar simultáneamente con las clases Owner, Dog y AdoptedDog.  
+• Pruebas: Implementación de pruebas unitarias para evaluar individualmente el funcionamiento de los componentes (e.g., gestión de perros con 97% de efectividad en lógica de negocio).  
+
+Consejos para el calibrador automático:
+1. Validación de Roles: Las clases de seguridad deben ser auditadas para confirmar que solo el rol ADMIN puede ejecutar acciones críticas como generate_user o eliminar registros permanentes.  
+
+2. Manejo de Imágenes: Las imágenes se procesan inicialmente en Base64, lo que puede inflar las métricas de carga en memoria; el sistema busca optimizar esto mediante referencias URL.  
+
+3. Análisis de Herencia: En el diagrama de clases (XMI), Dog actúa como superclase, lo que debe considerarse al calcular métricas de profundidad de herencia (DIT).  
+
+4. Flujo de Adopción: El motor debe distinguir entre la creación de un nuevo dueño (OwnerCreate) y la asociación de un dueño existente para evitar duplicidad de datos en la base relacional.

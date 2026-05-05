@@ -1,0 +1,46 @@
+Título de la tesis:
+"DISEÑO Y DESARROLLO DE UNA APLICACIÓN SOFTWARE, EN EL CONTEXTO DEL ENFOQUE ÁGIL, COMO SOPORTE A LA REDUCCIÓN DEL NÚMERO DE ANIMALES DE COMPAÑÍA SIN HOGAR EN EL DISTRITO METROPOLITANO DE QUITO — DESARROLLO DEL MÓDULO DE ADOPCIÓN EN UNA APLICACIÓN MÓVIL CON IMPLEMENTACIÓN DE UN ECOSISTEMA DE RED SOCIAL"
+
+Autor / Institución:
+Erick Steven Muñoz Ñaupari – Facultad de Ingeniería de Sistemas, EPN
+Director: Carlos Efraín Iñiguez Jarrín
+
+Problema que aborda:
+Según el censo de la Unidad de Bienestar Animal (UBA, marzo 2022), existen 183 perros y 131 gatos abandonados por cada km² en el Distrito Metropolitano de Quito, generando riesgos de salud pública y para el ecosistema.
+Ausencia de una plataforma digital especializada que conecte a personas interesadas en adoptar con quienes desean dar en adopción animales de compañía, apoyando la reducción del abandono mediante la difusión, la interacción social y el filtrado de publicaciones.
+
+Objetivo general del componente:
+Desarrollar el módulo de adopción de una aplicación móvil Android, aplicando un enfoque de red social especializada, para incentivar la adopción responsable de animales de compañía en el DMQ.
+
+Metodología:
+Diseño Centrado en el Usuario (DCU): encuesta a 60 personas, perfiles Persona (primario, secundario y terciario), análisis de tareas mediante la matriz OTI (Objetivos–Tareas–Interfaces) y prototipado iterativo en Figma.
+Marco de trabajo ágil SCRUM: 6 sprints, con Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective documentados.
+Arquitectura Limpia en tres capas (Dominio, Aplicación, Infraestructura) con inversión de control e inyección de dependencias.
+Tecnologías: React Native + Expo + TypeScript para el frontend móvil; Git/GitHub para control de versiones; Jira + Notion para gestión del proyecto.
+
+Estructura de módulos (por capas de arquitectura limpia):
+Dominio: Entidades centrales del negocio: Publication, AdoptionPublication, ExperiencePublication, Filter, AdoptionFilter, Photo, User, UserAptitude, Organization, Token, Comment, Like, Interaction, LoginCredentials. Interfaces de repositorio: IPublicationRepository, IPhotoRepository, IFavoritesRepository, IUserRepository, IOrganizationRepository, ICommentsRepository, ILikeRepository, IInternalRepository.
+Aplicación (casos de uso): ListAdoptionsUseCase, CreateAdoptionUseCase, UploadImageUseCase, ListExperiencesUseCase, CreateExperienceUseCase, SaveAsFavoriteUseCase, RemoveFromFavoritesUseCase, ListFavoritesUseCase, UpdateUserUseCase, LoginUseCase, LogoutUserUseCase, RegisterUserUseCase, GetUserUseCase, ConfigAuthUseCase, SetTokenInStorageUseCase, GetStoragedTokenUseCase, AddLikeUseCase, RemoveLikeUseCase, AddCommentUseCase, ListCommentsUseCase, ListOrganizationUseCase.
+Infraestructura — Repositorios: AxiosAdoptionRepository (implementa IPublicationRepository), AxiosExperienceRepository, AxiosFavoritesRepository, AxiosUserRepository (implementa IUserRepository), AxiosOrganizationRepository, AxiosCommentsRepository, AxiosLikeRepository, ExpoFileSystemRepository (implementa IPhotoRepository), ExpoStoreRepository (implementa IInternalRepository, almacenamiento encriptado del token JWT).
+Infraestructura — Componentes React Native: SocialNavigator (navegación principal por tabs), ProfileNavigationStack, AdoptionScreen, AdoptionScreenForm, ExperienceScreen, ExperienceScreenForm, FavoritesScreen, ProfileScreen, UserAptitudeForm, OrganizationScreen, OrganizationCard, LoginScreenForm, RegisterScreenForm, CardComponent, FilterModal, PhotoSelection, MoreOptionModal, CommentSection, CommentComponent, UserContext.
+
+Detalle del modelo de dominio (base para análisis de métricas):
+Extraído del archivo XMI (SC52_CORE_PERSE.xmi, exportado desde StarUML):
+ClaseAtributosOperacionesRelacionesPublication_id, user, description, publication_date, photo, likes, species—Asociada con AdoptionPublication, PhotoAdoptionPublicationpet_size, pet_breed, pet_age, pet_sex, pet_location, sterilized, vaccination_card, is_favorite—Hereda / asociada a Publication, FilterFilterspecies, date—Asociada con AdoptionFilterAdoptionFilterlocation—Extiende FilterPhotoimg_path—Asociada con Publication, UserUser_id, first_name, last_name, mobile_phone, neighborhood, birth_date, email, password, num_previous_pets, num_current_pets, outdoor_hours, house_space, has_yard, main_ped_food, pet_expenses, motivation, photo—Asociada con Publication, PhotoIPublicationRepository—create(_publication: Publication): Promise, find(_pageParam, _pageSize)Asociada con AxiosAdoptionRepositoryIPhotoRepository—create(_uri, _token): Promise<void>Asociada con ExpoFileSystemRepositoryAxiosAdoptionRepository—create(_publication): Promise<void>, find(_pageParam, _pageSize)Implementa IPublicationRepositoryExpoFileSystemRepository—create(_url, _token): PromiseImplementa IPhotoRepository
+
+Escala del proyecto (pistas para normalizar métricas):
+Proyecto frontend móvil en TypeScript/React Native: la complejidad reside en la capa de infraestructura (componentes visuales y repositorios Axios), no en algoritmos computacionales.
+WMC (Weighted Methods per Class): Se esperan valores moderados en casos de uso (1–3 métodos por clase, cada uno con lógica lineal); valores más bajos en entidades de dominio (sin métodos propios, solo atributos). Clases como SocialNavigator o AdoptionScreen pueden tener WMC más alto por la cantidad de hooks de React que orquestan.
+Fan-Out: Elevado en los componentes de pantalla (AdoptionScreen, CardComponent) porque consumen múltiples casos de uso simultáneamente (listado, likes, favoritos, comentarios, compartir). Tratar esto como acoplamiento funcional esperado en la capa de presentación, no como anomalía.
+ATFD (Access to Foreign Data): Moderado-bajo; las entidades de dominio son estructuras de datos simples (TypeScript interfaces), sin lógica de acceso externo. Los repositorios Axios son los únicos puntos de acceso a datos externos.
+Cohesión (LCOM): Alta cohesión esperada en los casos de uso (cada clase tiene un único propósito); menor cohesión relativa en componentes de pantalla compuestos que agrupan múltiples responsabilidades de UI.
+El sistema no gestiona concurrencia ni lógica de procesamiento intensivo; la carga computacional recae en el backend (API REST separada). El frontend es principalmente un consumidor de API con renderizado reactivo.
+
+Consejos para el calibrador automático:
+
+1. Las clases de repositorio (AxiosAdoptionRepository, AxiosFavoritesRepository, etc.) tienen métodos breves y bien definidos (create, find, delete); un WMC bajo aquí es correcto y esperado, no señal de clase incompleta.
+2. IPublicationRepository e IPhotoRepository son interfaces de dominio (abstracciones puras); no tienen atributos propios ni lógica — ignorarlas en métricas de complejidad interna.
+3. La clase User tiene 17 atributos porque combina datos personales y datos de aptitud de adoptante (num_previous_pets, outdoor_hours, has_yard, etc.); esto responde a una decisión de diseño deliberada del DCU, no a una "God Class". Verificar que el calibrador no la penalice por número de atributos sin analizar sus responsabilidades.
+4. Los componentes React (CardComponent, AdoptionScreen) pueden aparecer con Fan-Out elevado por las múltiples inyecciones de casos de uso vía hooks; tratar como patrón de composición esperado en arquitecturas de presentación reactiva.
+5. La inversión de control mediante inyección de dependencias puede generar métricas de acoplamiento afferente/eferente simétricas entre capas (dominio ← aplicación ← infraestructura); validar que el analizador respete la direccionalidad de las dependencias antes de clasificar como acoplamiento indebido.
+6. El XMI exportado corresponde al Sprint 1 del proyecto (SC52_CORE_PERSE.xmi); el modelo completo crece iterativamente en los sprints 2–6, por lo que las métricas de este artefacto representan el núcleo inicial del módulo de adopción, no la arquitectura final completa.

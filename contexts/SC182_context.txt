@@ -1,0 +1,89 @@
+Título de la tesis:
+“Desarrollo de un sistema de búsqueda y análisis de seguridad de dispositivos IoT – Desarrollo del componente Backend”
+
+Autor / Institución:
+Mike Angelo Encalada Onofa – Facultad de Ingeniería en Sistemas, Escuela Politécnica Nacional
+
+Problema que aborda:
+• Crecimiento acelerado del uso de dispositivos IoT en diferentes ámbitos (hogar, salud, transporte).
+• Limitaciones de estos dispositivos (recursos reducidos) que provocan debilidades de seguridad.
+• Falta de capacitación en seguridad por parte de proveedores.
+• Riesgo de ataques como malware, espionaje o vulneraciones en dispositivos conectados.
+• Necesidad de herramientas que permitan identificar vulnerabilidades en dispositivos IoT en Ecuador.
+
+Objetivo general del componente lógico:
+Desarrollar un sistema backend para la búsqueda y análisis de vulnerabilidades en dispositivos IoT dentro del territorio ecuatoriano, implementando buenas prácticas de desarrollo de software y garantizando la gestión, procesamiento y presentación de la información recolectada.
+
+Metodología:
+• Marco de trabajo ágil SCRUM con desarrollo iterativo por sprints.
+• Modelado arquitectónico mediante modelo C4 (contexto, contenedores, componentes y código).
+• Uso de buenas prácticas de desarrollo y enfoque modular.
+• Implementación con tecnologías modernas:
+– Django + Django REST Framework
+– JWT para autenticación
+– Bases de datos PostgreSQL y MongoDB
+
+Estructura de módulos del sistema (alineado al XMI):
+– authentication : autenticación, JWT, gestión de usuarios
+– account management : perfiles, roles, organización
+– dashboard : visualización de resultados
+– device list : gestión de dispositivos IoT
+– scanner : lógica de escaneo y análisis de vulnerabilidades
+
+Otros componentes relevantes:
+– servicios de captura (screenshots, banners)
+– manejo de direcciones IP y rangos
+– integración con sistema de correo electrónico
+
+Cada módulo sigue estructura tipo Django:
+• models → persistencia
+• views → lógica de endpoints
+• services → lógica de negocio
+
+Detalle del núcleo del sistema (base para métricas):
+
+• Clases clave (según XMI + PDF):
+– Scanner
+– ScanStrategy
+– ScannerCreator (Factory)
+– CaptureService
+– Profile, User
+– Modelos de dispositivos, puertos, resultados
+
+• Patrones de diseño utilizados:
+– Factory Method → creación de escáneres según contexto
+– Strategy → diferentes algoritmos de escaneo
+
+• Responsabilidades principales:
+– Escaneo de dispositivos IoT
+– Análisis de puertos y servicios
+– Captura de evidencia (screenshots)
+– Gestión de usuarios y autenticación
+– Procesamiento y almacenamiento de datos
+
+Escala del proyecto (pistas para normalizar métricas):
+• Proyecto académico de tamaño medio (~80–100 páginas).
+• Backend con múltiples módulos Django (~5 aplicaciones principales).
+• Uso de dos bases de datos → mayor complejidad estructural.
+• Presencia de patrones de diseño → mayor número de clases pequeñas.
+• Sistema con múltiples responsabilidades (seguridad, análisis, visualización).
+
+Consejos para tu calibrador automático:
+
+Considera el uso de patrones de diseño:
+– Strategy → muchas clases pequeñas (bajo WMC esperado)
+– Factory → alta creación de objetos
+Ajusta umbrales según tipo de clase:
+– Models (Django) → alto ATFD esperado
+– Services → alto Fan-Out
+– Controllers → coordinación (no necesariamente God Class)
+Clases críticas a vigilar:
+– Scanner (puede concentrar lógica → riesgo de God Class)
+– CaptureService (múltiples responsabilidades)
+– Contextos de escaneo
+Usa umbrales relativos (percentil 90 o 95).
+Evita falsos positivos en:
+– Interfaces (Strategy)
+– Factories
+– Clases propias de Django (User, Model)
+Ajusta el detector para sistemas con arquitectura modular + IoT (más complejos que CRUD estándar).

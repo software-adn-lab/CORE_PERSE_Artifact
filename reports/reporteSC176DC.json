@@ -1,0 +1,70 @@
+{
+  "god_class": [
+    {
+      "class": "Login",
+      "score": 0.34,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 3,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "usuario",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 8,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Administrador",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 8,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Evento",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Ponente",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}

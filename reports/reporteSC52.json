@@ -1,0 +1,70 @@
+{
+  "god_class": [
+    {
+      "class": "IPublicationRepository",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "UploadImageUseCase",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ListAdoptionsUseCase",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "CreateAdoptionUseCase",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "AxiosAdoptionRepository",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}

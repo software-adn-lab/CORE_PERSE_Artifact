@@ -1,0 +1,54 @@
+Título de la tesis:
+“Desarrollo de un prototipo software bajo estándar SCRUM para la promoción de exposiciones caninas con soporte de IA asociadas al análisis de emociones, métodos de pago, gestión de conferencias y workshops”.  
+
+Autor / Institución:
+Jefferson Gilberto Alquinga Chuquimarca – Facultad de Ingeniería de Sistemas, Escuela Politécnica Nacional (EPN).  
+
+Problema que aborda:
+
+• Ineficiencia en la gestión de eventos caninos debido a procesos manuales, descentralizados y falta de integración de sistemas.  
+
+• Subjetividad y falta de precisión en el análisis de las emociones caninas para evaluar el bienestar animal durante las exposiciones.  
+
+• Riesgos de vulnerabilidad en la información y necesidad de asegurar la tríada de seguridad (Confidencialidad, Integridad y Disponibilidad).  
+
+Objetivo general del componente lógico:
+
+• Desarrollar un prototipo de software utilizando la metodología SCRUM y una arquitectura robusta para la gestión integral de exposiciones caninas, integrando análisis de emociones mediante IA (modelo Gemini), procesamiento de pagos y gestión de eventos.  
+
+Metodología:
+
+• Marco de trabajo: SCRUM, implementado en 5 sprints para asegurar adaptabilidad y entregas funcionales constantes.  
+
+Enfoque de investigación: Mixto (cualitativo para necesidades de usuario y cuantitativo para rendimiento del sistema).  
+
+• Arquitectura: Modelo-Vista-Controlador (MVC) para garantizar la separación de responsabilidades, escalabilidad y mantenimiento simplificado.  
+
+
+Detalle del módulo de reconocimiento (base para análisis de emociones):
+
+• Tecnología de IA: Integración del modelo multimodal Gemini de Google AI para el procesamiento de imágenes.  
+
+• Técnica aplicada: Ingeniería de Prompts para guiar al modelo en la identificación de razas, edad y estados emocionales (alegría, miedo, estrés, etc.) a través de expresiones faciales y posturas corporales.  
+
+• Infraestructura técnica: Backend desarrollado en PHP con el framework Laravel y base de datos relacional MySQL.  
+
+• Seguridad: Implementación de autenticación segura mediante JSON Web Tokens (JWT) para la protección de la API REST.  
+
+
+Escala del proyecto:
+
+• Duración del desarrollo: Aproximadamente 2 meses y 7 días laborables (abril a julio de 2024).  
+
+• Componentes integrados: Módulos de gestión de usuarios, eventos (conferencias/workshops), pagos (pasarela con PayPal y tarjetas), análisis de IA (Chat Dog) y panel de administración centralizado.  
+
+• Alcance funcional: Soporta roles de administrador y usuario cliente, permitiendo desde la gestión de inventario (regalos/camisetas) hasta el análisis emocional en tiempo real.  
+
+
+Consejos para la normalización de métricas/calibración:
+
+1. Validación de Roles: Asegurar que la lógica de acceso distinga estrictamente entre el administrador (control total de prompts y eventos) y el usuario final.  
+
+2. Optimización de IA: Considerar que la carga de modelos multimodales puede impactar el rendimiento; se recomienda optimizar la gestión de recursos para evitar latencia en la interfaz de usuario.  
+
+3. Seguridad de Datos: La integridad debe validarse mediante el rol de administrador en procesos definidos, asegurando que el cifrado de datos y los tokens JWT mitiguen vulnerabilidades externas.

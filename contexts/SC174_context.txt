@@ -1,0 +1,38 @@
+Título de la tesis:
+“CHATBOT PARA ATENCIÓN DE PROCESOS ACADÉMICOS DE GRADO, CASO DE ESTUDIO SUBDECANATO FIS ANÁLISIS DE HERRAMIENTAS DE CHATBOT, DISEÑO Y CONSTRUCCIÓN DEL BACKEND”
+
+Autor / Institución:
+Andrés David Lozano Estrada – Facultad de Ingeniería de Sistemas, EPN  
+
+Problema que aborda:
+• Tiempos de respuesta prolongados (promedio 48 horas) en procesos académicos de la FIS.
+• Necesidad de automatizar la atención a consultas frecuentes sobre trámites de grado y servicios institucionales.  
+
+Objetivo general del componente lógico:
+Desarrollar una API REST que gestione el reconocimiento de intenciones, sanitización de mensajes y recuperación de respuestas para un chatbot académico.  
+
+Metodología:
+• Proceso de desarrollo basado en estándares de arquitectura de software y patrones de diseño.
+• Enfoque modular orientado a la escalabilidad y seguridad de la información.  Estructura de módulos:
+– Sanitización: Limpieza de sintaxis, eliminación de stop-words y lematización (Chain of Responsibility).
+– Reconocimiento: Motores de intención (Similitud del Coseno y Transformers).
+– Seguridad: Validación de peticiones y prevención de ataques (Pattern Proxy).
+– Servicios: Endpoints de mensajes, acciones y recursos multimedia.  
+
+Detalle del módulo de reconocimiento (base para umbrales):
+• Entidades dominio: Intent, Message, Response, Resource.
+• Patrones aplicados: Factory Method para instanciar motores de intención y Singleton para el modelo neuronal.
+• Infraestructura: Flask (Python), Sentence Transformers (paraphrase-multilingual-MiniLM-L12-v2) y servidor Waitress.
+• Rendimiento: 97.36% de precisión en la detección de intenciones.  
+
+Escala del proyecto (pistas para normalizar métricas):
+• Tesis orientada a la integración de NLP (Procesamiento de Lenguaje Natural) con una arquitectura backend en Python.
+• Complejidad concentrada en la lógica de procesamiento de texto y carga de modelos en memoria; WMC esperado moderado en controladores, pero bajo en clases de datos.
+• Fan-Out: Puede ser elevado en el módulo de "Chain of Responsibility" debido a la secuencia de filtros de limpieza de texto.
+• El sistema está diseñado para 20 usuarios concurrentes, lo que implica una lógica de concurrencia ligera en el backend.  
+
+Consejos para tu calibrador automático:
+1. Identifica clases de "Filtro" o "Sanitizador"; estas suelen tener WMC bajo pero alta cohesión secuencial.  
+2. Ajusta el umbral de ATFD para las clases que cargan los modelos de Transformers (Singleton), ya que acceden a múltiples recursos de configuración una sola vez.  
+3. Los patrones Proxy y Factory pueden inflar métricas de acoplamiento (Coupling) sin representar degradación del diseño; trátalos como componentes de infraestructura. 
+4. Valida que el config.json distinga entre la lógica de procesamiento (pesada en algoritmos) y la lógica de API (ligera en flujo) para evitar falsos positivos de "God Class" en el motor de intención.  

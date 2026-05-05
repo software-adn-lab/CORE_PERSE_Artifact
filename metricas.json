@@ -1,9 +1,11 @@
 {
   "wmc_min": 0,
-  "wmc_max": 60,
+  "wmc_max": 2,
   "atfd_min": 0,
-  "atfd_max": 20,
-  "fanin_max": 20,
-  "fanout_max": 20,
-  "lrc_max": 4
+  "atfd_max": 0,
+  "fanin_max": 0,
+  "fanout_max": 0,
+  "lrc_max": 1,
+  "score_suspicious": 0.28260869565217395,
+  "score_godclass": 0.4239130434782609
 }

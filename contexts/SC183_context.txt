@@ -1,0 +1,74 @@
+Título de la tesis:
+"DESARROLLO DE UN SISTEMA DE BÚSQUEDA Y ANÁLISIS DE SEGURIDAD DE DISPOSITIVOS IOT DESARROLLO DEL COMPONENTE BACKEND"
+Autor / Institución:
+Jhon Fernando Sangopanta Naula – Facultad de Ingeniería de Sistemas, Escuela Politécnica Nacional (EPN)  
+
+Problema que aborda:
+
+• Aumento de la producción científica y complejidad en la colaboración entre expertos en Ecuador.  
+
+• Ejecución manual de los procesos de extracción, limpieza y almacenamiento de datos en la plataforma preexistente (ResNet), lo que genera riesgos de integridad y falta de consistencia.  
+
+• Necesidad de reducir errores humanos y aumentar la eficiencia en la gestión de datos bibliométricos.  
+
+Objetivo general del componente lógico:
+• Integrar los sistemas independientes ResNet y Research Decide en una plataforma unificada denominada "Centinela", automatizando la extracción y depuración de datos desde Scopus para garantizar la actualización constante del sistema.  
+
+Metodología:
+
+• Marco de trabajo: SCRUM, organizado en 6 sprints (desde el Sprint 0 hasta el Sprint 5).  
+
+• Arquitectura: Adaptación de Arquitectura Hexagonal (puertos y adaptadores) para asegurar mantenibilidad y escalabilidad, dividida en capas de Infraestructura, Aplicación y Dominio.  
+
+• Gestión de Entorno: Uso de Docker y Docker Compose para orquestar servicios y asegurar un ambiente de desarrollo replicable.  
+
+• Desarrollo de Software: Enfoque modular centrado en la integración de componentes de búsqueda, redes de coautoría y analítica.  
+
+
+Estructura de módulos (Centinela):
+
+• Recuperador de Información (Componente A): Automatización con APIs de Elsevier para provisión de perfiles y artículos relevantes.  
+
+• Motor de Búsqueda (ResNet): Visualización de redes de coautoría y búsqueda por temas de investigación.  
+
+• Sistema de Recomendación (Research Decide): Gestión de formación de equipos de investigación y facilitación de consenso.  
+
+• Analítica (Componente D): Dashboards y estadísticas para apoyo en la toma de decisiones.  
+
+
+Detalle del módulo de reconocimiento y procesamiento:
+
+• Entidades Dominio: Author, Article, Affiliation, Topic, Coauthored.  
+
+• Procesamiento de Texto: Implementación de técnicas TF-IDF (Term Frequency-Inverse Document Frequency) y Similitud de Coseno para evaluar relevancia y comparar documentos.  
+
+
+Infraestructura Técnica:
+
+• Backend: Django Rest Framework (Python).  
+
+• Frontend: Angular (TypeScript).  
+
+• Base de Datos: Neo4j (Orientada a grafos) gestionada mediante el ORM Neomodel.  
+
+• Documentación: Swagger para la especificación de la API REST.  
+
+
+Escala del proyecto (Métricas y normalización):
+
+• Integración de Datos: Procesamiento de aproximadamente 30,205 documentos científicos ecuatorianos registrados en Scopus.  
+
+• Complejidad de Redes: Gestión de redes de coautoría con visualización interactiva de nodos (autores) y enlaces (colaboraciones) utilizando D3.js.  
+
+• Rendimiento: Automatización orientada a eliminar la intervención manual en la carga de datos, asegurando integridad mediante restricciones de unicidad (UniqueIdProperty) en Neomodel.  
+
+
+Consejos para el calibrador automático:
+
+1. Identificar Patrones de Persistencia: Validar el uso de repositorios (AuthorRepository) que separan la lógica de negocio de la consulta directa en Cypher (Neo4j).  
+
+2. Ajuste de Acoplamiento: Los adaptadores de infraestructura (vistas y serializadores) deben tratarse como componentes externos al núcleo del dominio.  
+
+3. Seguridad de Consultas: Verificar que el sistema utiliza cypher_query con parámetros para prevenir ataques de inyección de código en la base de datos de grafos.  
+
+4. Validación de Modelos: El config de Neomodel debe asegurar que no existan nodos duplicados mediante UniqueIdProperty en los campos de ID de Scopus

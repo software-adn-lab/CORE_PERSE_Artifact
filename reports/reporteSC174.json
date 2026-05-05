@@ -1,0 +1,109 @@
+{
+  "god_class": [
+    {
+      "class": "ResponseFormatter",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "MesagesResonsesGenerator",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 3,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "MessagesProxy",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "SintaxCleaner",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "BaseDataBuilder",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "DataBuilder",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "IntentRecognizerFactory",
+      "score": 0.4,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TransformerBasedSimilarityNetwork",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 3,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}

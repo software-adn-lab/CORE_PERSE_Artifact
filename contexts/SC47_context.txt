@@ -63,4 +63,4 @@ Consejos para tu calibrador automático (adaptado a esta tesis):
 – Repositories → alto acceso a datos sin ser God Class
 4. Ten en cuenta que es arquitectura limpia → muchas clases pequeñas especializadas.
 5. Ajusta umbrales más bajos que sistemas industriales, pero más altos que proyectos simples (por ser sistema modular completo).
-Guarda configuración en config.json para reutilizar el calibrador en otros XMI.
+6. Guarda configuración en config.json para reutilizar el calibrador en otros XMI.
