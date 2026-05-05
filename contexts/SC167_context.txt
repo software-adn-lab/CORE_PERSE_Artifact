@@ -1,0 +1,41 @@
+Título de la tesis:
+“DESARROLLO DE MÓDULOS DE SISTEMA ERP UTILIZANDO METODOLOGÍAS ÁGILES PARA MANTICORE LABS.” (Módulo de Mantenimiento)
+
+Autor / Institución:
+Tipanluiza Farinango Lesly Marisol – Facultad de Ingeniería de Sistemas, EPN
+
+Problema que aborda:
+• El mantenimiento es un proceso vital en las organizaciones; no realizarlo a tiempo genera costos adicionales y pérdida de clientes por desorganización.
+• Manticore Labs tiene la necesidad de optimizar y planificar de forma eficiente las operaciones de mantenimiento preventivo y correctivo.
+• Falta de un sistema centralizado que vincule técnicos, productos, componentes y tareas específicas en planes de ejecución.
+
+Objetivo general del componente lógico:
+Implementar el módulo de mantenimiento de Manticore Labs mediante la aplicación de la metodología SCRUM usando los frameworks NestJS para el backend y Angular para la aplicación cliente.
+
+Metodología:
+• Marco de trabajo SCRUM complementado con herramientas de prototipado como Figma y Balsamiq, y GitLab para CI/CD.
+• Arquitectura basada en Cliente-Servidor (SPA en el frontend y API REST en el backend).
+• Persistencia de datos en contenedor MySQL utilizando Prisma como ORM.
+
+Estructura de módulos:
+– Usuarios y Técnicos: gestión del personal ejecutor y acceso por roles (clases `Usuario`, `Tecnico`).
+– Parámetros y Catálogos: definición de las partes, operaciones y tipos de mantenimiento a realizar (clases `Elemento`, `Operacion`, `TipoMantenimiento`, `Accion`).
+– Medición: métricas de periodicidad, control y desgaste (clases `Rango`, `ValorRango`).
+– Planificación y Ejecución: orquestación de parámetros en plantillas asignadas a productos y planes de trabajo (clases `Plantilla`, `PlanMantenimiento`, `Mantenimiento`, `Producto`).
+
+Detalle estructural (base para umbrales según XMI):
+• Entidades de dominio: El diagrama XMI consta de 11 clases principales que reflejan un modelo de dominio anémico mapeado directamente hacia las tablas relacionales vía Prisma ORM.
+• Servicios de aplicación: Lógica centralizada en el API (Node.js/Express vía NestJS) para la gestión transaccional (CRUD) de los mantenimientos.
+• Diagrama XMI: Muestra una extensa generación de funciones de acceso automáticas (getters/setters, ej. `getnombreMant`, `setnombreMant`) y métodos declarativos de llaves foráneas e índices (ej. `FK_PlanMantenimiento_Plantilla`, `IXFK_Accion_Rango`) para todos los atributos.
+
+Escala del proyecto (pistas para normalizar métricas):
+• Tesis de tamaño mediano (aprox. 84 páginas), estructurada en 4 sprints con un stack tecnológico centrado en TypeScript (Angular + NestJS) y Docker.
+• El WMC (Weighted Method Count) en el XMI se presentará artificialmente elevado debido a que cada atributo genera sus respectivos métodos mutadores y declaraciones de relaciones de base de datos.
+• Clases integradoras como `Plantilla` o `PlanMantenimiento` mostrarán un Fan-Out entre moderado y alto, dado que son entidades puente que relacionan múltiples catálogos (Acción, Elemento, Técnico, Producto).
+
+Consejos para tu calibrador automático:
+
+1. Filtra los métodos de acceso triviales (get/set) y las operaciones de restricción relacional (`FK_`, `IXFK_`) en tu analizador XMI para obtener una lectura real del WMC y la complejidad.
+2. Ajusta los umbrales de acoplamiento (Fan-Out) hacia arriba para las clases maestras (`Plantilla`, `PlanMantenimiento`), ya que su naturaleza transaccional requiere enlazar llaves primarias de muchas entidades sin que esto sea un antipatrón.
+3. Evalúa la arquitectura asumiendo un diseño MVC clásico acoplado a ORM (Prisma), en donde la inteligencia no reside en las clases del modelo sino en los controladores.
+4. Guarda estos parámetros en `config.json` para que el CLI se calibre a arquitecturas modernas de TypeScript donde las clases del XMI son un reflejo uno a uno de las migraciones SQL.

@@ -1,38 +1,40 @@
 Título de la tesis:
-“CHATBOT PARA ATENCIÓN DE PROCESOS ACADÉMICOS DE GRADO, CASO DE ESTUDIO SUBDECANATO FIS ANÁLISIS DE HERRAMIENTAS DE CHATBOT, DISEÑO Y CONSTRUCCIÓN DEL BACKEND”
+“CHATBOT PARA ATENCIÓN DE PROCESOS ACADÉMICOS DE GRADO, CASO DE ESTUDIO SUBDECANATO FIS. ANÁLISIS DE HERRAMIENTAS DE CHATBOT, DISEÑO Y CONSTRUCCIÓN DEL BACKEND”
 
 Autor / Institución:
-Andrés David Lozano Estrada – Facultad de Ingeniería de Sistemas, EPN  
+Andrés David Lozano Estrada – Facultad de Ingeniería de Sistemas, EPN
 
 Problema que aborda:
-• Tiempos de respuesta prolongados (promedio 48 horas) en procesos académicos de la FIS.
-• Necesidad de automatizar la atención a consultas frecuentes sobre trámites de grado y servicios institucionales.  
+• Las consultas telemáticas de los estudiantes dirigidas al subdecanato de la FIS enfrentan tiempos de respuesta excesivos, alcanzando promedios de espera de 48 horas.
+• Incertidumbre y dificultad de la comunidad estudiantil al buscar documentos o formularios académicos necesarios para sus trámites.
+• Necesidad de una solución de atención inmediata, gratuita y escalable que optimice los procesos sin generar costos de mantenimiento a la facultad.
 
 Objetivo general del componente lógico:
-Desarrollar una API REST que gestione el reconocimiento de intenciones, sanitización de mensajes y recuperación de respuestas para un chatbot académico.  
+Proporcionar una solución efectiva, eficiente y personalizable mediante la construcción de una API REST para el reconocimiento de la intención de los usuarios y la generación de respuestas de un chatbot basado en recuperación.
 
 Metodología:
-• Proceso de desarrollo basado en estándares de arquitectura de software y patrones de diseño.
-• Enfoque modular orientado a la escalabilidad y seguridad de la información.  Estructura de módulos:
-– Sanitización: Limpieza de sintaxis, eliminación de stop-words y lematización (Chain of Responsibility).
-– Reconocimiento: Motores de intención (Similitud del Coseno y Transformers).
-– Seguridad: Validación de peticiones y prevención de ataques (Pattern Proxy).
-– Servicios: Endpoints de mensajes, acciones y recursos multimedia.  
+• Gestión ágil del proyecto mediante el marco de trabajo Kanban, adaptado para un desarrollador individual.
+• Desarrollo en lenguaje Python utilizando el framework Flask para exponer los endpoints de la API REST web.
+• Aplicación de técnicas de Procesamiento de Lenguaje Natural (PLN) y similitud del coseno usando bibliotecas como Scikit-Learn y modelos neuronales Transformers (SentenceTransformers).
 
-Detalle del módulo de reconocimiento (base para umbrales):
-• Entidades dominio: Intent, Message, Response, Resource.
-• Patrones aplicados: Factory Method para instanciar motores de intención y Singleton para el modelo neuronal.
-• Infraestructura: Flask (Python), Sentence Transformers (paraphrase-multilingual-MiniLM-L12-v2) y servidor Waitress.
-• Rendimiento: 97.36% de precisión en la detección de intenciones.  
+Estructura de módulos:
+– Procesamiento de Lenguaje: Capas de limpieza sintáctica, eliminación de palabras vacías y lematización (clases `SintaxCleaner`, `StopWordsCleaner`, `Lemmatizer`).
+– Reconocimiento de Intención: Motores de inferencia semántica y fábricas de instanciación (clases `CosineSimilarity`, `TransformerBasedSimilarityNetwork`, `IntentRecognizerFactory`).
+– Interfaz y Orquestación: Capas de control de acceso web, generación y formateo de respuestas (clases `MessagesProxy`, `MessagesResponsesGenerator`, `ResponseFormatter`, `ActionsProxy`).
+
+Detalle estructural (base para umbrales según XMI):
+• Arquitectura de software: El modelo XMI aplica fuertemente la programación orientada a objetos, apoyándose en jerarquías de interfaces abstractas (ej. `ProxyInterface`, `DataBuilder`, `IntentRecognizer`) para aislar comportamientos y responsabilidades.
+• Patrones de Diseño: Se modela explícitamente el uso de `Chain of Responsibility` (en las clases de limpieza de datos que heredan de `BaseDataBuilder`), `Factory Method` para crear los motores de reconocimiento, `Proxy` para seguridad/control de acceso, y `Singleton` para aislar el modelo neuronal en memoria.
+• Diagrama XMI: Presenta una estructura netamente comportamental donde la complejidad reside en la delegación entre clases y la orquestación de la petición HTTP, careciendo de un esquema de base de datos relacional tradicional.
 
 Escala del proyecto (pistas para normalizar métricas):
-• Tesis orientada a la integración de NLP (Procesamiento de Lenguaje Natural) con una arquitectura backend en Python.
-• Complejidad concentrada en la lógica de procesamiento de texto y carga de modelos en memoria; WMC esperado moderado en controladores, pero bajo en clases de datos.
-• Fan-Out: Puede ser elevado en el módulo de "Chain of Responsibility" debido a la secuencia de filtros de limpieza de texto.
-• El sistema está diseñado para 20 usuarios concurrentes, lo que implica una lógica de concurrencia ligera en el backend.  
+• Backend fuertemente enfocado en algoritmos NLP e inteligencia artificial, sometido a pruebas de rendimiento unitarias y pruebas de carga concurrente de hasta 20 usuarios (Locust).
+• Las clases encargadas bajo el patrón `Chain of Responsibility` distribuirán la complejidad ciclomática de manera secuencial y aislada, evitando cuellos de botella.
+• Las clases de tipo `Factory` poseerán un Fan-Out netamente dirigido a las interfaces que implementan u orquestan, lo cual indica alta cohesión y bajo acoplamiento.
 
 Consejos para tu calibrador automático:
-1. Identifica clases de "Filtro" o "Sanitizador"; estas suelen tener WMC bajo pero alta cohesión secuencial.  
-2. Ajusta el umbral de ATFD para las clases que cargan los modelos de Transformers (Singleton), ya que acceden a múltiples recursos de configuración una sola vez.  
-3. Los patrones Proxy y Factory pueden inflar métricas de acoplamiento (Coupling) sin representar degradación del diseño; trátalos como componentes de infraestructura. 
-4. Valida que el config.json distinga entre la lógica de procesamiento (pesada en algoritmos) y la lógica de API (ligera en flujo) para evitar falsos positivos de "God Class" en el motor de intención.  
+
+1. Analiza primero todo el XMI para extraer la distribución de métricas e identificar estructuras de delegación de comportamiento orientadas a patrones de diseño.
+2. Fija umbrales relativos (p. ej. percentil 90) y corrígelos: el WMC puede relajarse en las clases `Proxy` o `Generator`, ya que su función exclusiva es orquestar validaciones y delegar la carga útil de la petición, en lugar de manejar lógica algorítmica densa.
+3. Ten en cuenta la capa arquitectónica: la implementación de herencia abstracta a través de interfaces (como `ProxyInterface` o `DataBuilder`) concentrará y aumentará el Fan-In de dichas abstracciones; el calibrador debe entender esto como un indicador de alta cohesión (principios SOLID) y no penalizarlo como un antipatrón tipo "God Class".
+4. Guarda estos parámetros en `config.json` para que la CLI logre diferenciar y clasificar automáticamente si está escaneando una estructura puramente comportamental orientada a patrones como esta, adaptando el detector a sus características de abstracción.

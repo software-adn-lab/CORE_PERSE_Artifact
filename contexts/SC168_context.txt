@@ -1,0 +1,41 @@
+Título de la tesis:
+“DESARROLLO DE MÓDULOS DE SISTEMA ERP UTILIZANDO METODOLOGÍAS ÁGILES PARA MANTICORE LABS. COMPONENTE DE FACTURACIÓN”
+
+Autor / Institución:
+Erick Andrés Mayorga Chapi – Facultad de Ingeniería de Sistemas, EPN
+
+Problema que aborda:
+• Gran parte de las pequeñas y medianas empresas (PYMES) realizan sus procesos de facturación de forma manual, lo que consume una cantidad elevada de tiempo y esfuerzo operativo.
+• Falta de soporte o control para la creación, búsqueda y relación de comprobantes electrónicos digitales.
+• Necesidad de automatizar la gestión de facturas, guías de remisión, retenciones y notas de crédito/débito en Manticore Labs para garantizar eficiencia en sus transacciones comerciales.
+
+Objetivo general del componente lógico:
+Toma de requisitos, diseño, implementación y pruebas del módulo de Facturación para administrar fácilmente comprobantes electrónicos y documentos contables automatizados.
+
+Metodología:
+• Marco de trabajo ágil SCRUM estructurado en Sprints de una semana, complementado con prototipado en Figma y despliegue continuo en Heroku.
+• Arquitectura Modelo-Vista-Controlador (MVC) y Cliente-Servidor separando Frontend (Angular) y Backend (NestJS).
+• Persistencia de datos en una base de datos MySQL alojada en Microsoft Azure, utilizando TypeORM para el mapeo relacional de objetos.
+
+Estructura de módulos:
+– Entidades Base: gestión del emisor, usuarios, clientes, transportistas y catálogo de productos (clases `empresa`, `usuario`, `cliente`, `transportista`, `producto`, `direccion`).
+– Facturación y Guías: núcleo transaccional para el registro de ventas y despachos (clases `factura`, `factura_detalle`, `factura_pago`, `guia_de_remision`).
+– Documentos Complementarios: emisión de saldos a favor/contra y retención de impuestos (clases `nota_de_credito`, `nota_de_debito`, `comprobante_de_retencion` y sus respectivos detalles).
+– Parámetros: catálogos impositivos y métodos de transacción (clases `impuesto`, `metodo_de_pago`).
+
+Detalle estructural (base para umbrales según XMI):
+• Entidades de dominio: El diagrama consta de 21 clases fuertemente normalizadas que mapean las operaciones comerciales dictaminadas por el SRI (Servicio de Rentas Internas).
+• Lógica transaccional: Aplicación de arquitectura RESTful en Node.js (NestJS) donde la validación y transformación de datos recae sobre DTOs y decoradores (class-validator) en lugar de las clases del modelo de datos.
+• Diagrama XMI: Muestra una creación automática masiva de métodos de encapsulamiento (ej. `getnumero_comprobante`, `setfecha_emision`) y métodos de declaración de llaves foráneas e índices (ej. `FK_factura_cliente`, `IXFK_factura_empresa`) para asegurar la integridad relacional.
+
+Escala del proyecto (pistas para normalizar métricas):
+• Tesis orientada al desarrollo e integración continua desplegada en 7 Sprints (más Sprint 0), completando 141 puntos de historia con un stack de TypeScript (Angular + NestJS).
+• El WMC (Weighted Method Count) nominal extraído del XMI estará fuertemente inflado por la presencia de métodos mutadores, accesores y referencias a claves foráneas (FK/IXFK) generadas mecánicamente.
+• Clases núcleo como `factura` e `empresa` presentarán niveles de Fan-In y Fan-Out muy elevados, ya que `factura` enlaza clientes, detalles, pagos, y a su vez es referenciada por notas de débito, crédito y comprobantes de retención.
+
+Consejos para tu calibrador automático:
+
+1. Filtra los métodos de acceso triviales (`get/set`) y las definiciones de relaciones o restricciones (`FK_`, `IXFK_`) en la lectura del XMI para no penalizar el WMC y medir la complejidad real de la clase.
+2. Ajusta el umbral de acoplamiento (Fan-In/Fan-Out) al alza para la clase `factura` y `empresa`, dado que en un esquema ERP contable estas entidades son obligatoriamente pivotes de múltiples documentos secundarios.
+3. Evalúa la arquitectura considerando que en los frameworks modernos orientados a TypeScript (como NestJS con TypeORM), el patrón MVC concentra la complejidad ciclomática en los servicios del controlador, dejando el modelo anémico.
+4. Guarda esta calibración en `config.json` para tolerar arquitecturas donde las clases de datos están altamente normalizadas (21 tablas) y acopladas por las estrictas reglas de cardinalidad del negocio contable.

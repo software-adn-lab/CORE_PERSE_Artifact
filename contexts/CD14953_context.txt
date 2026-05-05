@@ -1,0 +1,39 @@
+Título de la tesis:
+“CORE DE SERVICIOS WEB PARA INTEROPERAR ENTRE EL ECOSISTEMA DE LA FACULTAD DE INGENIERÍA EN SISTEMAS Y LA PLATAFORMA DE SISTEMAS ACADÉMICOS DE LA ESCUELA POLITÉCNICA NACIONAL. COMPONENTE DE DESARROLLO DEL CORE DE SERVICIOS WEB”
+
+Autor / Institución:
+Victor Sebastián Moreno Coral – Facultad de Sistemas, EPN
+
+Problema que aborda:
+• Falta de interoperabilidad, redundancia de datos y limitaciones en el acceso eficiente a la información entre los aplicativos académicos del Subdecanato de la FIS.
+• El sistema actual (caso de estudio: agendamiento de citas médicas) es un monolito con alto acoplamiento, lo que dificulta su mantenimiento, la escalabilidad y la integración de nuevas tecnologías.
+• Necesidad de centralizar y asegurar el acceso a la información académica mediante un ecosistema tecnológico moderno y escalable.
+
+Objetivo general del componente lógico:
+Desarrollar un Core de servicios web basado en una arquitectura RESTful que permita la interoperabilidad entre los sistemas informáticos del Subdecanato y las aplicaciones académicas existentes, facilitando un entorno colaborativo, modular y seguro.
+
+Metodología:
+• Enfoque metodológico híbrido (ágil y tradicional) basado fuertemente en el patrón Domain-Driven Design (DDD) y arquitectura de microservicios.
+• Stack tecnológico centrado en .NET 8, Entity Framework Core, PostgreSQL, orquestación con Docker Compose, y un API Gateway (Ocelot) con seguridad JWT y HMAC.
+
+Estructura de módulos:
+– Domain: Entidades del negocio, reglas y raíces de agregado (clases `Cita`, `AgregadoCita`, `Paciente`, `Personal`, `Catalogo`).
+– Application: Casos de uso segregados en comandos y consultas bajo el patrón CQRS (clases `ComandoAgendarCita`, `ConsultaDisponibilidad`, `ManejadorDeComandos`).
+– Infraestructure: Gestión de persistencia, bases de datos y adaptadores de eventos (clases `RepositorioCitas`, `RepositorioPacientes`, `AdaptadorDeIntetgracion`).
+– API: Exposición de los endpoints REST hacia el exterior (clases `ControladorCitas`, `ControladorPacientes`).
+
+Detalle estructural (base para umbrales según XMI):
+• Arquitectura de software: El modelo XMI CD14953_CORE_PERSE.xmi muestra una división arquitectónica pura basada en capas (API, Application, Domain, Infraestructure). Se aleja de los modelos de datos anémicos, utilizando raíces de agregado (`AgregadoCita`) para proteger las invariantes del negocio.
+• Patrones de Diseño: Se modela explícitamente la separación de responsabilidades con repositorios para la capa de datos y un enfoque CQRS (Command Query Responsibility Segregation) evidenciado en la separación de clases `Comando...` y `Consulta...`, orquestadas por un `ManejadorDeComandos`.
+• Diagrama XMI: Muestra alta cohesión en el dominio y un acoplamiento direccionado correctamente (las capas externas apuntan hacia el Dominio y Aplicación).
+
+Escala del proyecto (pistas para normalizar métricas):
+• Proyecto estructurado como una Prueba de Concepto (POC) para migrar un monolito hacia un sistema orquestado en contenedores. El documento abarca alrededor de 89 páginas, con validación de endpoints y rendimiento bajo carga usando Postman, Newman y Swagger.
+• El Fan-Out será intencionalmente alto en las clases de tipo `ManejadorDeComandos` y `Controlador...` ya que actúan como orquestadores que invocan comandos, consultas, repositorios y adaptadores.
+
+Consejos para tu calibrador automático:
+
+1. Analiza primero todo el XMI para identificar la arquitectura orientada a capas (Domain, Application, Infraestructure, API). Verifica que las dependencias fluyan hacia adentro (hacia el Dominio), lo cual es el estándar en DDD.
+2. Fija umbrales relativos relajando el límite de WMC y Fan-Out en la capa `Application` (especialmente en `ManejadorDeComandos` y controladores). En arquitecturas CQRS, estas clases concentran la delegación y enrutamiento de peticiones a repositorios y servicios de dominio.
+3. Ten en cuenta la capa: evalúa la alta cohesión en la capa `Domain` a través del patrón Agregado (`AgregadoCita`), que agrupará la lógica, asociaciones (`usa`, `crea`, `contiene`) y validaciones de sus entidades hijas (`EntidadCitaMedica`). El calibrador debe entender esto como una excelente práctica de diseño y no como una "God Class".
+4. Guarda estos parámetros en `config.json` para que el CLI se adapte a arquitecturas empresariales modernas (.NET 8 + DDD + CQRS), donde la separación estricta de comandos y consultas distribuye la complejidad ciclomática de manera muy diferente a los sistemas MVC clásicos.

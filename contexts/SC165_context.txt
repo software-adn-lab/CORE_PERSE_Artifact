@@ -1,0 +1,41 @@
+Título de la tesis:
+“DESARROLLO DE MÓDULOS DE SISTEMA ERP UTILIZANDO METODOLOGÍAS ÁGILES ROLES DE PAGO”
+
+Autor / Institución:
+Juan José Jaramillo Cajamarca – Facultad de Ingeniería de Sistemas, EPN
+
+Problema que aborda:
+• La administración de personal y nómina es un proceso crítico, con muy poco margen para errores y retrasos, cuya complejidad aumenta con el número de empleados.
+• Existe una necesidad latente en la empresa Manticore Labs de reducir los tiempos de gestión administrativa y asegurar la integridad económica en el cálculo de salarios.
+
+Objetivo general del componente lógico:
+Construir el módulo de roles de pago correspondiente a un sistema web ERP para la empresa Manticore Labs, abarcando la gestión de empleados, estructura organizacional, contratos, ingresos/descuentos y la generación automatizada de nóminas.
+
+Metodología:
+• Marco de trabajo SCRUM complementado con prácticas de XP (refactorización de código, integración continua) y técnica de User Story Mapping.
+• Arquitectura Cliente-Servidor (API REST construida con NestJS y Frontend con Next.js usando Server-Side Rendering).
+• Base de datos relacional PostgreSQL con integración de servicios en la nube como Digital Ocean Spaces.
+
+Estructura de módulos:
+– Empleados: registro y configuración personal, dirección y cargas familiares (clases `person`, `address`, `familiar`).
+– Organización Empresarial: catálogos y gestión de filiales, departamentos y cargos (clases `company`, `subsidiary`, `deparment`, `positions`).
+– Contratos: define la relación laboral, salario base y posición en el organigrama (clase `contract`).
+– Ingresos y Descuentos: plantillas de rubros (fijos o porcentuales, obligatorios u opcionales) y asignaciones a empleados (clases `income`, `discount`, `parameters`).
+– Nómina (Roles de Pago): generación automatizada mediante Cron Jobs a final de mes y exportación a PDF (clase `payroll`).
+
+Detalle estructural (base para umbrales según XMI):
+• Entidades de dominio: El diagrama XMI contiene 19 clases principales que representan un mapeo directo de las tablas transaccionales y catálogos de la base de datos.
+• Servicios de aplicación: Lógica fuertemente delegada a la capa del controlador (API NestJS) y tareas programadas (Cron Jobs).
+• Diagrama XMI: Muestra una masiva generación automatizada de funciones de acceso (getters y setters, ej. `getfirstName`, `setfirstName`) y constructores de relación de llaves foráneas e índices (ej. `FK_contract_person`, `IXFK_payroll_person`) para todos los atributos.
+
+Escala del proyecto (pistas para normalizar métricas):
+• Tesis de aproximadamente 70 páginas, con desarrollo Full-Stack e integración de librerías modernas de PDF y paginación.
+• El WMC (Weighted Method Count) a nivel de diagrama UML se verá artificialmente extremo, ya que la herramienta inyectó múltiples métodos (`get`, `set`) para cada campo de la base de datos.
+• Se observará un Fan-Out de moderado a alto en las clases transaccionales centrales (`contract`, `payroll`), ya que actúan como entidades conectoras que agrupan información del empleado, los rubros y la organización.
+
+Consejos para tu calibrador automático:
+
+1. Analiza el XMI filtrando el "ruido" generado por los cientos de métodos getter/setter para obtener un WMC y complejidad real más apegada a la lógica de negocio.
+2. Ajusta los umbrales de acoplamiento (Fan-Out) considerando que un alto nivel de dependencias en clases como `contract` o `payroll` es propio del diseño de bases de datos relacionales y ORMs, no un antipatrón estructural.
+3. Evalúa estas clases bajo el contexto de un modelo de dominio anémico (DTOs/Entidades ORM); las métricas de tamaño (ATFD) deben tener un techo mucho más alto.
+4. Guarda estos parámetros en tu `config.json` para que el CLI se adapte adecuadamente a arquitecturas Node.js/NestJS donde los esquemas de bases de datos son expuestos directamente en el diagrama XMI.

@@ -1,0 +1,44 @@
+Título de la tesis:
+“DISEÑO E IMPLEMENTACIÓN DE UNA ARQUITECTURA CORE PARA AUTOMATIZACIÓN Y MEJORA DE SERVICIOS EN LOS LABORATORIOS DE LA FACULTAD DE INGENIERÍA EN SISTEMAS UTILIZANDO LA METODOLOGÍA SCRUM”
+
+Autor / Institución:
+Alex Javier Erazo Barrera, Anderson Fernando Cárdenas Real – Facultad de Ingeniería en Sistemas Informáticos y de Computación, EPN
+
+Problema que aborda:
+• Los laboratorios (LAB-FIS) ejecutan procesos de asistencia técnica y préstamos sin un sistema informático, lo que impide un manejo eficiente.
+• Existe la necesidad de centralizar las diferentes fuentes de datos con medidas de seguridad adecuadas para el acceso y almacenamiento.
+• Falta de información adecuada y oportuna para la planificación y la toma de decisiones.
+
+Objetivo general del componente lógico:
+Diseñar e implementar una arquitectura CORE para LAB-FIS que permita el manejo eficiente de datos mediante una API REST para los procesos de inventario, reserva de equipos, servicios virtuales y asistencias técnicas.
+
+Metodología:
+• Metodología ágil SCRUM apoyada por la técnica User Story Mapping.
+• Diseño de Arquitectura por Capas (Servicios, Negocio, Acceso a Datos).
+• Procesamiento de datos delegado fuertemente a Procedimientos Almacenados en PostgreSQL, y API desarrollada en Node.js con Express.
+
+Estructura de módulos:
+– Inventario: gestión de equipos físicos y sus custodios (TBL_EQUIPO, TBL_CUSTODIO).
+– Préstamos de equipos: registro de entregas, recepciones, retrasos y listas de penalización.
+– Servicios virtuales: solicitudes de software, equipos remotos y VDI por parte de docentes y estudiantes.
+– Asistencias técnicas: registro de asistencias técnicas y requerimientos especiales.
+– Autenticación y autorización: gestión de roles y middlewares con JWT para proteger rutas.
+
+Detalle estructural (base para umbrales según XMI):
+• Entidades de dominio: El sistema presenta un modelo anémico mapeado directamente de tablas transaccionales (ej. TBL_ASISTENCIA) y tablas de parámetros (ej. TBP_MATERIA).
+• Servicios de aplicación: La lógica principal reside en los controladores de la API y los Procedimientos Almacenados.
+• Funcionalidades: Cubren operaciones de CRUD mediante alrededor de 50 endpoints protegidos.
+• Diagrama XMI: Las clases exhiben una generación automática de métodos (getters, setters y validaciones de Foreign Keys como `getfld_id` o `FK_TBL...`) para cada atributo.
+
+Escala del proyecto (pistas para normalizar métricas):
+• Tesis de aproximadamente 55 páginas técnicas, desplegada en infraestructura propia con servidores Linux separados para API y BD.
+• Diagrama completo de base de datos modelado en XMI abarca más de 30 clases/tablas.
+• El WMC (Weighted Method Count) observado en clases transaccionales será artificialmente alto debido a la excesiva cantidad de métodos de acceso (getters/setters) generados por columna.
+• Clases como `TBL_SOLICITUD_SERVICIOS` o `TBL_PRESTAMO_EQUIPO` presentarán un Fan-Out moderado-alto al actuar como entidades conectoras con múltiples tablas de parámetros.
+
+Consejos para tu calibrador automático:
+
+1. Analiza el XMI considerando que refleja un diseño orientado a bases de datos relacionales; las clases actúan como DTOs (Data Transfer Objects).
+2. Ajusta los umbrales de métricas de tamaño y WMC hacia arriba, ya que las clases cuentan con muchos métodos triviales generados automáticamente (get/set) que no representan complejidad real de código o lógica pesada.
+3. Fija umbrales relativos entendiendo que el acoplamiento (Fan-Out) será natural en tablas puente, sin que esto signifique un antipatrón de "God Class".
+4. Guarda estos parámetros en el `config.json` para que la CLI adapte el detector a arquitecturas por capas con fuerte delegación a Procedimientos Almacenados.
