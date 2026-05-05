@@ -1,0 +1,80 @@
+Título de la tesis:
+“Diseño y desarrollo de un sistema web para la gestión de citas médicas en clínicas privadas”
+
+Autor / Institución:
+(Información no visible en el fragmento, se asume proyecto académico universitario)
+
+Problema que aborda:
+• Procesos manuales o poco eficientes en la gestión de citas médicas.
+• Dificultad para organizar agendas de doctores y disponibilidad de horarios.
+• Falta de centralización de información de pacientes y citas.
+• Riesgo de errores, duplicidad o pérdida de información.
+
+Objetivo general del componente lógico:
+Desarrollar un sistema web que permita gestionar citas médicas, pacientes, doctores y horarios, optimizando la organización y mejorando la eficiencia en clínicas privadas.
+
+Metodología:
+• Enfoque iterativo de desarrollo (tipo RAD o ágil).
+• Separación en capas para facilitar mantenimiento y escalabilidad.
+• Uso de buenas prácticas de diseño orientado a objetos.
+
+Estructura de módulos:
+– user / account
+Gestión de usuarios del sistema (administradores, pacientes, doctores)
+
+– appointment
+Gestión de citas médicas (creación, actualización, cancelación)
+
+– doctor
+Gestión de información de médicos y sus horarios
+
+– patient
+Gestión de datos de pacientes
+
+– schedule / availability
+Control de disponibilidad de horarios
+
+– services
+Lógica de negocio y conexión con base de datos
+
+Cada módulo sigue una organización lógica similar a capas (modelo, servicios, persistencia).
+
+Detalle del módulo clave: appointment
+
+• Entidades principales:
+– Appointment
+– Patient
+– Doctor
+– Schedule
+
+• Funcionalidades:
+– Crear citas médicas
+– Validar disponibilidad de horarios
+– Evitar conflictos de agenda
+– Consultar historial de citas
+
+• Diseño técnico:
+– Uso de clases de servicio para lógica de negocio
+– Separación entre entidades y acceso a datos
+– Posible uso de repositorios o DAOs
+
+Escala del proyecto (referencia para normalización de métricas):
+• Proyecto académico de tamaño medio.
+• Sistema web con múltiples módulos interrelacionados.
+• Complejidad moderada en gestión de relaciones entre entidades.
+• Probable uso de base de datos relacional.
+
+Características relevantes para análisis de código:
+• Alto acoplamiento potencial entre Appointment, Doctor y Schedule.
+• Clases de servicio pueden concentrar lógica (posible incremento de WMC).
+• Entidades de dominio relativamente simples (bajo ATFD).
+• Validaciones de negocio pueden incrementar Fan-Out en servicios.
+• Posible uso de múltiples relaciones entre clases (asociaciones y dependencias).
+
+Consejos para calibración de métricas:
+
+1. Analizar la distribución de métricas en todas las clases del sistema.
+2. Usar umbrales relativos (percentiles) en lugar de valores absolutos.
+3. Identificar clases críticas (como AppointmentService) para análisis detallado.
+4. Diferenciar entre clases de dominio y clases de servicio.
+5. Considerar que alto acoplamiento en módulos centrales puede ser esperado por la naturaleza del sistema.

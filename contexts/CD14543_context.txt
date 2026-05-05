@@ -1,0 +1,61 @@
+Título de la tesis:
+“Desarrollo de una API RESTful para la aplicación Kiddo English Club”
+
+Autor / Institución:
+Kenneth Leonardo Ulloa Tobar – Escuela Politécnica Nacional (EPN)
+
+Problema que aborda:
+• Bajo nivel de dominio del idioma inglés en Ecuador (posición 80 en el EPI 2023).
+• Métodos tradicionales de enseñanza poco efectivos en niños.
+• Necesidad de herramientas más interactivas y motivadoras.
+• Evidencia de que el uso de TICs y juegos educativos mejora la motivación, atención y retención del aprendizaje.
+
+Objetivo general del componente lógico:
+Desarrollar un servicio web que gestione cuentas (padres e hijos), temas, puntajes, logros y recursos multimedia para soportar un juego móvil interactivo enfocado en el refuerzo del idioma inglés en niños de 6 a 8 años.
+
+Metodología:
+• Rapid Application Development (RAD) con enfoque iterativo y basado en prototipos.
+• Alineación con el ciclo de vida de APIs (análisis, diseño, desarrollo y operación).
+• Uso de arquitectura limpia por capas y principios SOLID.
+
+Estructura de módulos:
+– account   : gestión de cuentas de usuarios (padres) y autenticación mediante JWT
+– player    : gestión de niños (Guest), Score, Achievement y reportes de progreso
+– theme     : gestión de temas de aprendizaje y vocabulario
+– services  : acceso a recursos multimedia (imágenes y audio)
+
+Cada módulo sigue la estructura: domain / application / infrastructure con inyección de dependencias.
+
+Detalle del módulo player (base para análisis de métricas):
+• Entidades de dominio: Guest, Score, Achievement, TimeAchievement.
+• Servicios: ScoreService, AchievementService.
+• Uso de interfaces (IAchievementRepository) para desacoplamiento.
+• Implementación de patrón Factory para creación de logros.
+• Funcionalidades cubren:
+– Logros (HUD2)
+– Reportes de avance (HUD3)
+– Parte de cuentas de niños (HUD4)
+
+Escala del proyecto (referencia para normalización de métricas):
+• Proyecto académico de tamaño medio (API completa).
+• Implementado en Python con Flask.
+• Base de datos NoSQL (MongoDB).
+• Incluye pruebas unitarias y de rendimiento.
+• Despliegue en la nube mediante Docker y Railway.
+• Arquitectura modular con múltiples paquetes pero menor complejidad que sistemas industriales.
+
+Características relevantes para análisis de código:
+• Uso intensivo de arquitectura limpia → separación clara por capas.
+• Alto uso de interfaces e inyección de dependencias → puede aumentar Fan-Out.
+• Clases de servicio concentran lógica → posible mayor WMC.
+• Clases de dominio simples → bajo acoplamiento y complejidad.
+• Uso de herencia y polimorfismo en logros (Achievement).
+• Presencia de repositorios desacoplados de la base de datos.
+
+Consejos para calibración de métricas:
+
+1. Analizar todo el XMI para obtener distribución de métricas (WMC, ATFD, Fan-Out, etc.).
+2. Definir umbrales relativos (por ejemplo, percentil 90) en lugar de valores fijos.
+3. Ajustar umbrales según el tamaño del sistema (proyecto académico).
+4. Diferenciar por tipo de clase (service, domain, repository).
+5. Considerar que alto fan-out en repositorios o servicios no implica necesariamente un problema de diseño.

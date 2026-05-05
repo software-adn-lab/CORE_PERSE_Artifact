@@ -1,0 +1,200 @@
+{
+  "god_class": [
+    {
+      "class": "Guest",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "IAccountRepository",
+      "score": 0.43,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 4,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "AccountService",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 3,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "TokenService",
+      "score": 0.43,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 4,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "GuestService",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 5,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ScoreService",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "AchievementService",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "IGuestRepository",
+      "score": 0.43,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 4,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Achievement",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "Score",
+      "score": 0.39,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 3,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "IAchievementRepository",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 5,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "IThemeRepository",
+      "score": 0.47,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 5,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ThemeService",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "File",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "FileService",
+      "score": 0.35,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}
