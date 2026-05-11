@@ -1,0 +1,106 @@
+Título de la tesis:
+“Desarrollo de módulos web parametrizables para gestión académica – Módulo web para la postulación de proyectos de investigación”
+
+Autor / Institución:
+Rommerl Alexander Valdiviezo – Escuela Politécnica Nacional
+
+Problema que aborda:
+• El proceso de postulación de proyectos de investigación se realizaba manualmente mediante formularios y documentación física.
+• Existía dificultad para centralizar y administrar la información académica relacionada con proyectos de investigación.
+• Los procesos institucionales requerían mayor automatización, trazabilidad y control.
+• Necesidad de módulos reutilizables y parametrizables que faciliten futuras extensiones del sistema académico.
+
+Objetivo general del componente lógico:
+Desarrollar un módulo web parametrizable para la gestión de postulaciones de proyectos de investigación, integrándolo dentro de un sistema de gestión académica y permitiendo automatizar el registro, validación y administración de propuestas.
+
+Metodología:
+• Metodología ágil SCRUM para el desarrollo iterativo del sistema. 
+• Desarrollo evolutivo basado en refinamiento continuo de requerimientos.
+• Arquitectura modular orientada a reutilización y parametrización de componentes.
+• Implementación incremental mediante Sprint 0 y varios sprints funcionales. 
+
+Herramientas y tecnologías utilizadas:
+• Plataforma Java EE5.
+• Tecnologías principales:
+– Servlet 2.5
+– JSP 2.1
+– JSF 1.2
+– JPA
+– EJB 3.0
+– Servicios web RESTful y SOAP
+• Uso de inyección de dependencias mediante anotaciones Java EE.
+• Diseño visual basado en Material Design. 
+
+Estructura de módulos del sistema:
+– postulación de proyectos : creación, edición y envío de propuestas
+– usuarios y autenticación : control de acceso y roles académicos
+– gestión académica : administración de parámetros y configuraciones
+– persistencia : acceso a base de datos mediante JPA
+– servicios web : integración y comunicación entre módulos
+La arquitectura sigue un enfoque multicapa:
+• presentación → JSP / JSF
+• lógica de negocio → EJB
+• persistencia → JPA
+• servicios → APIs REST/SOAP
+
+Detalle del núcleo del sistema (base para métricas):
+• Componentes principales esperados en el XMI:
+– Controladores JSF / Servlets
+– Beans EJB
+– Entidades JPA
+– Servicios REST
+– Clases de persistencia y acceso a datos
+• Responsabilidades principales:
+– Gestión de postulaciones de investigación
+– Validación y almacenamiento de propuestas
+– Gestión de usuarios y permisos
+– Administración de parámetros configurables
+– Comunicación entre componentes empresariales
+• Características arquitectónicas relevantes:
+– Arquitectura modular y reutilizable
+– Componentes parametrizables
+– Separación de responsabilidades
+– Inyección de dependencias
+– Integración de múltiples capas empresariales
+
+Escala del proyecto (pistas para normalizar métricas):
+• Proyecto académico empresarial de tamaño medio-alto.
+• Arquitectura Java EE genera múltiples clases especializadas por capa.
+• Uso de EJB y JPA incrementa número de servicios y entidades.
+• Sistema orientado a parametrización y reutilización de módulos.
+• Presencia de múltiples componentes de integración y persistencia.
+
+Consejos para tu calibrador automático:
+
+
+1. Ajusta métricas considerando arquitectura multicapa Java EE:
+– Beans EJB → Fan-Out naturalmente alto
+– Entidades JPA → alto acceso a datos (ATFD esperado)
+– Controladores JSF → coordinación de múltiples servicios
+
+
+2. Evita falsos positivos en:
+– DTOs
+– Entidades JPA
+– Fachadas EJB
+– Servicios REST/SOAP
+
+
+3. Usa umbrales relativos (percentiles p90/p95) en lugar de métricas industriales fijas.
+
+
+4. Considera que sistemas parametrizables suelen presentar:
+– Mayor número de clases de configuración
+– Alta interacción entre módulos
+– Servicios reutilizables con múltiples dependencias
+
+
+5. Clases críticas a monitorear:
+– Coordinadores de workflow de postulaciones
+– Fachadas principales EJB
+– Servicios de parametrización
+– Módulos centrales de gestión académica
+
+
+6. Guarda los parámetros en config.json para adaptar el detector a sistemas empresariales Java EE orientados a módulos reutilizables.
+

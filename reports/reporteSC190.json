@@ -1,0 +1,161 @@
+{
+  "god_class": [
+    {
+      "class": "ProyectoDAO",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "CargaConfiguracionUseCase",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ConvocatoriaDAO",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "AgregarLineaDeInvestigacionUseCase",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "CargarAsignacionesPresupuestoUseCase",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "NormativaProyectoInteractor",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "SeccionPresupuestoController",
+      "score": 0.67,
+      "label": "god-class",
+      "metrics": {
+        "WMC": 2,
+        "ATFD": 0,
+        "TCC": 0.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "CargarObjetivosDeDesarrolloUseCase",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "CargarDatosPresupuestoUseCase",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ItemConvocatoriaDAO",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "ConvocatoriaDAO",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    },
+    {
+      "class": "AsignacionPresupuestoDa",
+      "score": 0.32,
+      "label": "suspicious",
+      "metrics": {
+        "WMC": 1,
+        "ATFD": 0,
+        "TCC": 1.0,
+        "FanIn": 0,
+        "FanOut": 0,
+        "LRC": 1
+      }
+    }
+  ],
+  "hub_like": []
+}
