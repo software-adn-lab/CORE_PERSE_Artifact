@@ -8,9 +8,8 @@ from src.domain.model import UMLModel, UMLClass, UMLAttribute, UMLOperation
 
 class XMIParser:
     # Namespaces XML usados en consultas XPath.
-    # Acepta cualquier namespace UML/XMI para máxima compatibilidad
     NS = {
-        "uml": None,  # Se ignora el namespace para XPath
+        "uml": None,
         "xmi": None,
     }
 
@@ -18,58 +17,81 @@ class XMIParser:
     def parse(self, file: Path | str) -> UMLModel:
         """
         Lee un archivo XMI y devuelve un UMLModel.
-        - Primer intento: parseo estricto.
-        - Si falla por XMLSyntaxError, reintenta sin comentarios y con recover=True.
         """
-        # Paso 1: normalizamos y validamos la ruta de entrada.
+
+        # Paso 1: validar ruta
         p = Path(file)
         if not p.exists():
             raise FileNotFoundError(p.resolve())
 
+        # Paso 2: leer XML
         try:
-            # Paso 2 (intento estricto): parseo XML normal.
             root = etree.parse(str(p)).getroot()
         except etree.XMLSyntaxError as err:
-            # Segundo intento: tolerante
-            # remove_comments/recover ayudan con XMI mal formado.
             parser = etree.XMLParser(remove_comments=True, recover=True)
             root = etree.parse(str(p), parser=parser).getroot()
-            print(f"⚠️  XML corregido automáticamente ({err})")
+            print(f"⚠️ XML corregido automáticamente ({err})")
 
-        # Paso 3: contenedor del modelo UML en memoria.
+        # ================= DEBUG =================
+        print("ROOT =", root.tag)
+        print("NSMAP =", root.nsmap)
+
+        nodes = root.xpath(
+            ".//*[contains(@*[local-name()='type'], 'Class') or "
+            "contains(@*[local-name()='type'], 'Interface')]"
+        )
+
+        print("TOTAL NODOS =", len(nodes))
+
+        for n in nodes[:10]:
+            print("TAG:", n.tag)
+            print("NAME:", n.get("name"))
+            print("ATTRS:", n.attrib)
+            print("----------------------------")
+        # =========================================
+
         model = UMLModel()
 
-        # ---------- 1 · clases / interfaces ----------------------------- #
-        # Buscamos nodos UML que sean Class o Interface.
-        # Ejemplo de XPath objetivo:
-        # .//packagedElement[@xmi:type='uml:Class']
-        # XPath sin namespaces estrictos: busca cualquier packagedElement cuyo xmi:type termine en 'Class' o 'Interface'
-        for node in root.xpath(
-            ".//packagedElement[contains(@xmi:type, 'Class') or contains(@xmi:type, 'Interface')]",
-            namespaces={"xmi": root.nsmap.get("xmi", "http://www.omg.org/XMI")},
-        ):
-            # Construimos entidad de dominio UMLClass.
-            # Detecta el namespace real de xmi:id
-            xmi_ns = root.nsmap.get("xmi", "http://www.omg.org/XMI")
+        xmi_ns = root.nsmap.get(
+            "xmi",
+            "http://schema.omg.org/spec/XMI/2.1"
+        )
+
+        # ---------- Clases / Interfaces ---------- #
+        for node in nodes:
+
+            print("Procesando:", node.tag)
+
             cls = UMLClass(
                 id_=node.get(f"{{{xmi_ns}}}id"),
                 name=node.get("name", "<unnamed>"),
                 package=self._package_of(node),
             )
+
+            print("ID =", cls.id_)
+            print("NAME =", cls.name)
+
             # atributos
             for att in node.xpath("./ownedAttribute"):
-                # Ejemplo: <ownedAttribute name="score" type="int"/>
-                cls.attributes.append(UMLAttribute(att.get("name"), att.get("type")))
+                cls.attributes.append(
+                    UMLAttribute(
+                        att.get("name"),
+                        att.get("type")
+                    )
+                )
+
             # operaciones
             for op in node.xpath("./ownedOperation"):
-                # Ejemplo: <ownedOperation name="getScore">...
                 cls.operations.append(
                     UMLOperation(
                         op.get("name"),
-                        [p.get("type") for p in op.xpath("./ownedParameter")],
+                        [
+                            p.get("type")
+                            for p in op.xpath("./ownedParameter")
+                        ],
                     )
                 )
-            # Registramos clase por id.
+
             model.classes[cls.id_] = cls
 
         # ---------- 1.b · clientDependency (sin prefijo) ----------------- #
@@ -79,27 +101,36 @@ class XMIParser:
             supplier_id = dep.get("supplier")
             self._add_edge(model, client_id, supplier_id)
 
-        # ---------- 2 · Dependency / Association ------------------------ #
-        # Otras relaciones vienen como packagedElement Dependency/Association.
-        # Usar solo el namespace xmi, nunca default, para evitar errores de lxml
-        for rel in root.xpath(
-            ".//packagedElement[contains(@xmi:type, 'Dependency') or contains(@xmi:type, 'Association')]",
-            namespaces={"xmi": root.nsmap.get("xmi", "http://www.omg.org/XMI")},
-        ):
-            # Fallback memberEnd cuando no existe client/supplier explicitos.
+        # ---------- Dependency / Association ---s------- #
+        rels = root.xpath(
+            ".//*[contains(@*[local-name()='type'], 'Dependency') or "
+            "contains(@*[local-name()='type'], 'Association')]"
+        )
+
+        print("RELACIONES:", len(rels))
+
+        for rel in rels:
+
             client = rel.get("client") or rel.get("memberEnd")
             supplier = rel.get("supplier") or rel.get("memberEnd")
-            self._add_edge(model, client, supplier)
 
-        print(f"[PARSE]  clases cargadas: {len(model.classes)}")  # debug opcional
+            self._add_edge(
+                model,
+                client,
+                supplier,
+            )
+
+        print(f"[PARSE] clases cargadas: {len(model.classes)}")
+
         return model
 
     # ------------------------------------------------------------------ #
     @staticmethod
-    def _add_edge(model: UMLModel, client_id: str | None, supplier_id: str | None):
-        # Solo agregamos arista si ambos ids son validos y no hay self-loop.
-        # Ejemplo valido: A -> B.
-        # Ejemplo invalido: A -> A.
+    def _add_edge(
+        model: UMLModel,
+        client_id: str | None,
+        supplier_id: str | None,
+    ):
         if (
             client_id
             and supplier_id
@@ -107,17 +138,19 @@ class XMIParser:
             and supplier_id in model.classes
             and client_id != supplier_id
         ):
-            # Guardamos ambos sentidos para soportar FanIn/FanOut.
             model.classes[client_id].outgoing.add(supplier_id)
             model.classes[supplier_id].incoming.add(client_id)
 
     # ------------------------------------------------------------------ #
     def _package_of(self, element) -> str | None:
-        # Recorre ancestros hasta encontrar un Package contenedor.
-        # Ejemplo: com.app.service -> devuelve "service" segun XMI.
+
         p = element.getparent()
+
         while p is not None:
+
             if p.tag.endswith("Package"):
                 return p.get("name")
+
             p = p.getparent()
+
         return None
